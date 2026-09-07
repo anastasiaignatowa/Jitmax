@@ -1,0 +1,18 @@
+{
+  "files": [
+    "styles/base.css",
+    "styles/slides/slide-01.css",
+    "styles/slides/slide-02.css",
+    "styles/slides/slide-03.css",
+    "styles/slides/slide-04.css",
+    "styles/slides/slide-05.css",
+    "styles/slides/slide-06.css",
+    "styles/slides/slide-08.css",
+    "styles/slides/slide-09.css",
+    "styles/slides/slide-10.css",
+    "styles/slides/slide-11.css",
+    "styles/responsive.css",
+    "styles/animations.css",
+    "styles/overrides.css"
+  ]
+}

@@ -1,0 +1,18 @@
+/*
+  Файл-индекс для редакторов. Для правок используйте файлы из src/styles/.
+  Финальный index.html собирает CSS через src/styles/manifest.json.
+*/
+@import url("./styles/base.css");
+@import url("./styles/slides/slide-01.css");
+@import url("./styles/slides/slide-02.css");
+@import url("./styles/slides/slide-03.css");
+@import url("./styles/slides/slide-04.css");
+@import url("./styles/slides/slide-05.css");
+@import url("./styles/slides/slide-06.css");
+@import url("./styles/slides/slide-08.css");
+@import url("./styles/slides/slide-09.css");
+@import url("./styles/slides/slide-10.css");
+@import url("./styles/slides/slide-11.css");
+@import url("./styles/responsive.css");
+@import url("./styles/animations.css");
+@import url("./styles/overrides.css");

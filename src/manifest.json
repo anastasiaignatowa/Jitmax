@@ -1,0 +1,808 @@
+{
+  "slides": [
+    {
+      "id": "slide-1",
+      "number": 1,
+      "order": 1,
+      "title": "The future is already here",
+      "file": "slides/slide-01.html",
+      "status": "READY",
+      "owner": "unassigned",
+      "assets": [
+        {
+          "path": "assets/slide-01.mp4",
+          "kind": "video",
+          "hash": "463610509f6b8ab6a01349a905bcaa651e38e71309f4da4b7c24b524f2e5ce5c",
+          "bytes": 4029430
+        }
+      ]
+    },
+    {
+      "id": "slide-2",
+      "number": 2,
+      "order": 2,
+      "title": "Мы предлагаем Jitmax заработать на этом будущем",
+      "file": "slides/slide-02.html",
+      "status": "READY",
+      "owner": "unassigned",
+      "assets": [
+        {
+          "path": "assets/slide-02-background.mp4",
+          "kind": "video",
+          "hash": "c8036efd9a81b8f044baff00f9ad421ed6f734ec841a869595deeaa7ded1bb8b",
+          "bytes": 1589371
+        },
+        {
+          "path": "assets/slide-02-events-background-20260604.mp4",
+          "kind": "video",
+          "bytes": 5634544,
+          "hash": "93005d7d42559c47bf3e0fd41423552fc69ec5b61733c14b6946ca5204a715d2"
+        },
+        {
+          "path": "assets/slide-02-events-background.mp4",
+          "kind": "video",
+          "hash": "c252552c6e25849d6a5922abe5785517081fd1a49d75a7da36ce3864d2db63ff",
+          "bytes": 5838199,
+          "unused": true
+        }
+      ]
+    },
+    {
+      "id": "slide-3",
+      "number": 3,
+      "order": 3,
+      "title": "Что такое иммерсивное LED-пространство",
+      "file": "slides/slide-03.html",
+      "status": "READY",
+      "owner": "unassigned",
+      "assets": [
+        {
+          "path": "assets/slide-03-02.png",
+          "kind": "image",
+          "hash": "ac1fdff45fe5e7fa3c8ca1ea2c95e46addfc2d8f7cb411fc47233087fe5dd2ae",
+          "bytes": 2123907
+        },
+        {
+          "path": "assets/slide-03-scene-01.png",
+          "kind": "image",
+          "hash": "84664012ba78bc47814368ab793c0664eb70922f4f07f4c082452455869e9521",
+          "bytes": 1421253,
+          "unused": true
+        },
+        {
+          "path": "assets/slide-03-scene-01.mp4",
+          "kind": "video",
+          "hash": "61fe71a89b466e5bfa17cf0bd765efca5887b25f1e6eeb608e823560a4c2c073",
+          "bytes": 7425917,
+          "unused": true
+        },
+        {
+          "path": "assets/slide-03-scene-01-20260605.mp4",
+          "kind": "video",
+          "hash": "0fce5ac0963914362dd86f4d3d675984b928219090e9f2feb1250479c71a34ac",
+          "bytes": 9524000
+        },
+        {
+          "path": "assets/slide-03-scene-02-20260605.mp4",
+          "kind": "video",
+          "hash": "36d0f1c60d6ad3807ac8f1c4ed21a8b04d739de0c9ced6ca6f7e315649bc4e8d",
+          "bytes": 2120452
+        },
+        {
+          "path": "assets/slide-03-background.mp4",
+          "kind": "video",
+          "hash": "83174fe30e155f4c02c1c6cb347117c765cb3536af372c2820b4d01ca0657d85",
+          "bytes": 1437483,
+          "unused": true
+        },
+        {
+          "path": "assets/slide-03-scene-cycle-20260605.mp4",
+          "kind": "video",
+          "hash": "1ececcf4c6095e7d2cd86de9c95f1fc334ebfe749768f17fbe67db97e450a5dd",
+          "bytes": 5405768
+        }
+      ]
+    },
+    {
+      "id": "slide-4",
+      "number": 4,
+      "order": 4,
+      "title": "Один центр.\nНесколько причин\nприйти и остаться",
+      "file": "slides/slide-04.html",
+      "status": "READY",
+      "owner": "unassigned",
+      "assets": [
+        {
+          "path": "assets/Green_Zone.mp4",
+          "kind": "video",
+          "hash": "6449bbc8b79f4a7ab4e96e7bb302336574409cdd2e8dd6f4506b4e1e51d7e7bd",
+          "bytes": 3768526
+        },
+        {
+          "path": "assets/Green_zone.png",
+          "kind": "image",
+          "hash": "c651664e65422df8d3fe7c1a6a6cf4ce114f87ead6d4698728e58825203f2e6b",
+          "bytes": 3350587
+        },
+        {
+          "path": "assets/Max_taking_selfie_LED_screen_202605312032 1.mp4",
+          "kind": "video",
+          "hash": "33d4b22a7c09f643e8dba75d35063511f4484bd6dae10ab306e44cdeb8a082f7",
+          "bytes": 3204276
+        },
+        {
+          "path": "assets/slide-04-02.png",
+          "kind": "image",
+          "hash": "06a420a734c821093fabc543baacea26f57f692a867da2925b6a51e621043863",
+          "bytes": 3366573
+        },
+        {
+          "path": "assets/slide-04-coworking-01.mp4",
+          "kind": "video",
+          "hash": "7d5ac4094007bc4414ffd850d3061128854a98d9bdc610c4326f11af452dbd72",
+          "bytes": 3328808
+        },
+        {
+          "path": "assets/slide-04-coworking-02.mp4",
+          "kind": "video",
+          "hash": "1c53066fade736950fafebbc9eec143817c6787df8d3213cf8a699578bb6a3d9",
+          "bytes": 1809546
+        },
+        {
+          "path": "assets/slide-04-coworking.png",
+          "kind": "image",
+          "hash": "8fde3cb1547535507e3e2d707b662162a2de421c384b3d9c462318d73f3d3bdb",
+          "bytes": 2446002
+        },
+        {
+          "path": "assets/slide-04-dragon-festival.mp4",
+          "kind": "video",
+          "hash": "d9087684542a6914c63e90a64637f0ca3f33bd6b7759d3e11d81f7d28fd8b123",
+          "bytes": 13153366
+        },
+        {
+          "path": "assets/slide-04-dragon-festival.png",
+          "kind": "image",
+          "bytes": 4094321,
+          "hash": "feb24e2a19d56e7d4489ad0a555dd10926df9dffb0feadccb1580334e1f26982"
+        },
+        {
+          "path": "assets/slide-04-kids-zone.mp4",
+          "kind": "video",
+          "hash": "832ea537efe08a309a0754657c4b4d79d6d2cb90ca66e8b1daa5f26cae50f861",
+          "bytes": 3339143
+        },
+        {
+          "path": "assets/slide-04-kids-zone.png",
+          "kind": "image",
+          "bytes": 3030949,
+          "hash": "6e119f7817a58b02bb660a3b6ea5a58ff218c8ecdb171b22d68c9a1c75e9bd05"
+        },
+        {
+          "path": "assets/slide-04-onsen.mp4",
+          "kind": "video",
+          "hash": "faf2a025d692a37fc732d51869bd48df1ce457159123c4a1c68f3ed882bed84d",
+          "bytes": 2279532
+        },
+        {
+          "path": "assets/slide-04-onsen.png",
+          "kind": "image",
+          "bytes": 2750316,
+          "hash": "245941d94fb41e236a211bd012f03f935ed2857b19c871f3d8787ef17dc2ec23"
+        },
+        {
+          "path": "assets/slide-04-rain-room-thunder.wav",
+          "kind": "audio",
+          "hash": "1c4d24df24b776561c8728feb5f5d0b7d281d66f17ef9806c8370c8018f04114",
+          "bytes": 104128
+        },
+        {
+          "path": "assets/slide-04-rain-room.jpg",
+          "kind": "image",
+          "bytes": 219003,
+          "hash": "27a9e4c12b9e9b3ad45f950c48d71513ac47824775972fbe859eab5352b8a6cb"
+        },
+        {
+          "path": "assets/slide-04-rain-room.mp4",
+          "kind": "video",
+          "hash": "81b3435dc1684a348ee0369078adc014652dd4c34f6057f7fd43b3d75cbdacc8",
+          "bytes": 3321494
+        },
+        {
+          "path": "assets/slide-04-rooftop-01.mp4",
+          "kind": "video",
+          "bytes": 3157579,
+          "hash": "84603c061a44f554c15c55cc68d1d5a1d4a2fda198a4c6d7fba9ebf34e82081f"
+        },
+        {
+          "path": "assets/slide-04-rooftop-02.mp4",
+          "kind": "video",
+          "bytes": 2476734,
+          "hash": "85a4e5b3dfdf073720f345ee9286a839d66089744b6daff4a0d1a1b6a0dadcec"
+        },
+        {
+          "path": "assets/slide-04-rooftop.mp4",
+          "kind": "video",
+          "hash": "46c6152e212a22b6262c6e2cad286e6285448269c6706e31388389134b4998f6",
+          "bytes": 1942167,
+          "unused": true
+        },
+        {
+          "path": "assets/slide-04-rooftop.png",
+          "kind": "image",
+          "bytes": 2323994,
+          "hash": "ca78d369b8bf8c7a413bf327be43cb1d769108363c245b8a6fcbd9d221fa3408"
+        },
+        {
+          "path": "assets/slide-04-salt-room.mp4",
+          "kind": "video",
+          "hash": "be02bf3831133d4cd0fdea8af50b6393d66ad3d8c31e693be509696b4d3c8d2a",
+          "bytes": 1440434
+        },
+        {
+          "path": "assets/slide-04-salt-room.png",
+          "kind": "image",
+          "bytes": 2308223,
+          "hash": "60058bd90da60f824c74148cfab4817178e2ccfaff1f765edcb3ac7a83441d28"
+        },
+        {
+          "path": "assets/slide-04-smart-training.mp4",
+          "kind": "video",
+          "hash": "261edf806fc58a0e76c17c8205c2bc3fe449480afaf7e32c94c5358299e42c1a",
+          "bytes": 3578850
+        },
+        {
+          "path": "assets/slide-04-smart-training.png",
+          "kind": "image",
+          "bytes": 2333619,
+          "hash": "f4b97523ffbc2f217015d38028e5ca1e109ed8f4b9e2044e86c1a902f1de4799"
+        },
+        {
+          "path": "assets/slide-04-social-01-replacement.mp4",
+          "kind": "video",
+          "bytes": 1311532,
+          "hash": "af9095902ac2eebc7a01a27abafccadba28e31c57b15624797cdbacb0cca0d34"
+        },
+        {
+          "path": "assets/slide-04-social-02.mp4",
+          "kind": "video",
+          "bytes": 5475709,
+          "hash": "0ea64530cb99396885d41fc3992cf4d597c81e52bcec4c43d7aa5a708050fcfe"
+        },
+        {
+          "path": "assets/slide-04-social.png",
+          "kind": "image",
+          "bytes": 3175769,
+          "hash": "cfd54a28e100fd793871c45de0ba645284230d01ea5d5c787f0e537df28e3441"
+        },
+        {
+          "path": "assets/slide-04-splash-park.jpeg",
+          "kind": "image",
+          "bytes": 318011,
+          "hash": "e9f624e6b3899aaef80f5fe0976fc393906001234df15cb6204339564b6f03b5"
+        },
+        {
+          "path": "assets/slide-04-splash-park.mp4",
+          "kind": "video",
+          "hash": "35c46eb207c256e498d32cd713e81d099b87f24e20cfe21c2469934ed0c58269",
+          "bytes": 3976989
+        },
+        {
+          "path": "assets/slide-04-thai-ceremony.mp4",
+          "kind": "video",
+          "hash": "55f087b150aa02f0966fe5452aea1657949d208b45f33941ae478c5f901a6a68",
+          "bytes": 12009815
+        },
+        {
+          "path": "assets/slide-04-thai-ceremony.png",
+          "kind": "image",
+          "bytes": 3547370,
+          "hash": "723fe74bedd9235b3e66cf18624ea13902638eb22de9d3eb7e8b6e7ab970558d"
+        },
+        {
+          "path": "assets/slide-04-thai-massage.mp4",
+          "kind": "video",
+          "bytes": 1440055,
+          "hash": "ed334daf34f550bcc50f089f2ff790221b197062874ab8d094182c13803484f3"
+        },
+        {
+          "path": "assets/slide-04-thai-massage.png",
+          "kind": "image",
+          "bytes": 1975493,
+          "hash": "a89b15936fd7bebec6e5666abf8052848d901774dc3126d13b9ce9d39e8dddbb"
+        },
+        {
+          "path": "assets/slide-04-vr-arcade-activity.mp4",
+          "kind": "video",
+          "bytes": 4081663,
+          "hash": "03d5e265488c6ca1af64e539c3d2938593e90c65f850ae4709650d5d081e8532"
+        },
+        {
+          "path": "assets/slide-04-vr.mp4",
+          "kind": "video",
+          "hash": "f67a367ca75b514e42f3c374e68d81dab1b944924212d7f7f1faf73234cbdb32",
+          "bytes": 3827123
+        },
+        {
+          "path": "assets/slide-04-vr.png",
+          "kind": "image",
+          "bytes": 2302502,
+          "hash": "5d39b576fc5b144b7c6ead76ad7660a13002bad9dd9681c6b3f9f7e41d0d5d3d"
+        },
+        {
+          "path": "assets/slide-04-yoga.mp4",
+          "kind": "video",
+          "hash": "221598509845e7a68d2dcbef094d5191037ee0ca80302853add03cea690c7cb9",
+          "bytes": 3175472
+        },
+        {
+          "path": "assets/slide-04-yoga.png",
+          "kind": "image",
+          "bytes": 2242843,
+          "hash": "9edc9234e5dad3ce3bfe2bf0eb6797b8728729b8ae30dc9bb81d440162d1129c"
+        }
+      ]
+    },
+    {
+      "id": "slide-5",
+      "number": 5,
+      "order": 5,
+      "title": "Сценарий меняется.\nНазначение зоны остается",
+      "file": "slides/slide-05.html",
+      "status": "READY",
+      "owner": "unassigned",
+      "assets": [
+        {
+          "path": "assets/slide-04-background.png",
+          "kind": "image",
+          "hash": "e7c96ffe0fbf6c974a5381e5a39bd8a0ec648febc741f045352ed32780527f97",
+          "bytes": 1899698
+        },
+        {
+          "path": "assets/slide-05-event-brand-cartier-2026.png",
+          "kind": "image",
+          "hash": "02f916f6cff1f7ba9825a638aa1ffcd84653d6196a07feee3236b40beb6d6b0d",
+          "bytes": 2474126
+        },
+        {
+          "path": "assets/slide-05-event-brand-cartier.mp4",
+          "kind": "video",
+          "hash": "a6f2a023886e3a9b4b9f77c3447c5bd1294b93667562f4bfcfac39f1332b1060",
+          "bytes": 6886369
+        },
+        {
+          "path": "assets/slide-05-event-brand-dior-2026.png",
+          "kind": "image",
+          "hash": "82a8006f7908fc647386ce85fc496a2b7c6a189c8db9395cb8b533a9a84587cb",
+          "bytes": 2978907
+        },
+        {
+          "path": "assets/slide-05-event-brand-dior.mp4",
+          "kind": "video",
+          "hash": "6a0d3a4e49084456b92d1eeb0fa298721194372db93be4e51c11a866248d379d",
+          "bytes": 5341105
+        },
+        {
+          "path": "assets/slide-05-event-brand-mercedes-2026.png",
+          "kind": "image",
+          "hash": "35c8cf497b78c3503be6aadea5b69a3bd82343b096186ee23438981df5ac3f15",
+          "bytes": 2835955
+        },
+        {
+          "path": "assets/slide-05-event-brand-mercedes.mp4",
+          "kind": "video",
+          "hash": "13f36eb0525f7a5c127e50cba0db31c06d04005f7d73bfbb93aa807f99eec656",
+          "bytes": 3545160
+        },
+        {
+          "path": "assets/slide-05-event-brand-nike-2026.png",
+          "kind": "image",
+          "hash": "8a68b57503cffb7a05a2b97f503d74de001123be8d9abd405d880837d4e29a0b",
+          "bytes": 2638514
+        },
+        {
+          "path": "assets/slide-05-event-brand-nike.mp4",
+          "kind": "video",
+          "hash": "b1a17f0b1801d5c32deb65b2445520a5c3a8d4ba59638331034ec6a7e0e29007",
+          "bytes": 3064965
+        },
+        {
+          "path": "assets/slide-05-event-concerts-2026.png",
+          "kind": "image",
+          "hash": "903227d3058fcb5d955285af6b8b25a666df2ab632b07620b510b7d4123bc967",
+          "bytes": 3017555
+        },
+        {
+          "path": "assets/slide-05-event-concerts.mp4",
+          "kind": "video",
+          "hash": "072d1cec2c6cd8b5a1079bf813788a698a6dc107af8a7317594c055737489ee2",
+          "bytes": 7342926
+        },
+        {
+          "path": "assets/slide-05-event-conferences-2026.png",
+          "kind": "image",
+          "hash": "422bcea99956df487cc89763ed1701348c29b3a8f8a896c21b7f7722dae88252",
+          "bytes": 2102476
+        },
+        {
+          "path": "assets/slide-05-event-conferences.mp4",
+          "kind": "video",
+          "hash": "e979298a829f6c56c483f7f2de3e293434e8fa1308face912669a5ba51ae5cda",
+          "bytes": 1760551
+        },
+        {
+          "path": "assets/slide-05-event-dino-show.mp4",
+          "kind": "video",
+          "hash": "9a6864c4f7305923435eee6d2f3a978c529156c84f405b7d51640755130b5397",
+          "bytes": 8664899
+        },
+        {
+          "path": "assets/slide-05-event-dino-show.png",
+          "kind": "image",
+          "hash": "30db042c51891d14e6a27fe18eb745fda0617fe8e858b65b56634b3510de3d73",
+          "bytes": 3276918
+        },
+        {
+          "path": "assets/slide-05-event-dj-2026.png",
+          "kind": "image",
+          "hash": "059889f200843f8e66b0cae8c39fd62305332dd4af1306e7f83fb09231c0bd1b",
+          "bytes": 2676789
+        },
+        {
+          "path": "assets/slide-05-event-dj.mp4",
+          "kind": "video",
+          "hash": "da37cf9de005e8774dc4f5cd7c167fe6f4a55d0b014e97fc7763b805cfa10a14",
+          "bytes": 10841046
+        },
+        {
+          "path": "assets/slide-05-event-fashion-show.mp4",
+          "kind": "video",
+          "hash": "e7eaa27eb5425fa7802439f5a0e97916b29d194f7e0536ab4fd1ba68be1aea01",
+          "bytes": 10287242
+        },
+        {
+          "path": "assets/slide-05-event-fashion-show.png",
+          "kind": "image",
+          "hash": "995e3c6fe02364fcda57805a22ebaf72d7fc3c5cc8ea6b7c8659175907b0a6fd",
+          "bytes": 3025702
+        },
+        {
+          "path": "assets/slide-05-event-ocean-show.mp4",
+          "kind": "video",
+          "hash": "95fa80bfa4b7713ea00d0155b9759091221cb97d4bb40dfcb8baaa0e92801581",
+          "bytes": 9080039
+        },
+        {
+          "path": "assets/slide-05-event-ocean-show.png",
+          "kind": "image",
+          "hash": "71ab086775bada0f8a97e699b8e5878816fd9fd8a650083e363b9568c141fecc",
+          "bytes": 3056639
+        },
+        {
+          "path": "assets/slide-05-event-weddings-2026.png",
+          "kind": "image",
+          "hash": "985ef71ce779ce077468d0787cc653a6c6139703827abb5f69ad9b872ac17922",
+          "bytes": 2662590
+        },
+        {
+          "path": "assets/slide-05-event-weddings.mp4",
+          "kind": "video",
+          "hash": "eece81292817c00df2a72cc788ebee31d9293aa4199ca03251f7736c24343eea",
+          "bytes": 4450885
+        },
+        {
+          "path": "assets/slide-05-yoga-cosmos-scene-01.mp4",
+          "kind": "video",
+          "bytes": 3610661,
+          "hash": "c4126c4ce9c7da26450997505b8e5c0c84619dfac83373441a84d288046fd958"
+        },
+        {
+          "path": "assets/slide-05-yoga-cosmos-scene-02.mp4",
+          "kind": "video",
+          "bytes": 1293051,
+          "hash": "62b7a4e18093666f2ae4f26ecfd3c91e136f40a52d6f3e1d4a0c2dd8ac778269"
+        },
+        {
+          "path": "assets/slide-05-yoga-forest-scene-01.mp4",
+          "kind": "video",
+          "bytes": 4495136,
+          "hash": "9dcdaca43cfb406b8e8fd0658a39322389c43506d512cca3dff24f0596d1007c"
+        },
+        {
+          "path": "assets/slide-05-yoga-forest-scene-02.mp4",
+          "kind": "video",
+          "bytes": 1832481,
+          "hash": "3fe545a3eacd1ace29e2d417d11abcbeb32bc502caf4a4d34da978b941109c59"
+        },
+        {
+          "path": "assets/slide-05-yoga-forest.png",
+          "kind": "image",
+          "hash": "0c26d72da58560f87028e5665f18785ca17897e8ba3b8c28127b7505199e9ba7",
+          "bytes": 2472219
+        },
+        {
+          "path": "assets/slide-05-yoga-himalayas.png",
+          "kind": "image",
+          "hash": "82d9fa87226b6429ac8b39faecde3bebea0ea511716ecc6029472a84865fc8ec",
+          "bytes": 2311531
+        },
+        {
+          "path": "assets/slide-05-yoga-india.png",
+          "kind": "image",
+          "hash": "17cbb5aa94e28ca417f5b2df47aef38b02cdfe49387747a281f6bdb72b889333",
+          "bytes": 2047642
+        },
+        {
+          "path": "assets/slide-05-yoga-ocean-scene-01.mp4",
+          "kind": "video",
+          "bytes": 2416587,
+          "hash": "e98eedcb6b88d119e872724379b467acafb706efde4c16d1975cf9be01dc666d"
+        },
+        {
+          "path": "assets/slide-05-yoga-ocean-scene-02.mp4",
+          "kind": "video",
+          "bytes": 2583025,
+          "hash": "9dbbe3d0e787ec5a219e159be0dadc4c71fc59c004ce4a8e1060ecacdb495bf1"
+        },
+        {
+          "path": "assets/slide-05-yoga-ocean.png",
+          "kind": "image",
+          "hash": "65ed8e537614517f99d61c9ac643f5ccf75197398212589655b412d3afdc79c3",
+          "bytes": 2058147
+        },
+        {
+          "path": "assets/slide-05-yoga-space-01.mp4",
+          "kind": "video",
+          "bytes": 3524414,
+          "hash": "2870e6f64b09d35839ed84b2219efbe8088da6f4e572fde52e11e4a13fc25f37"
+        },
+        {
+          "path": "assets/slide-05-yoga-space-02.mp4",
+          "kind": "video",
+          "bytes": 1569686,
+          "hash": "ec93bbb9f45195593bedbc057d88210d6c9992afe413986a13d692370f1d3838"
+        },
+        {
+          "path": "assets/slide-05-yoga-space.png",
+          "kind": "image",
+          "hash": "9c68c8449911a537145034cec754afc2a4fa97343bf33e36d3fde620c2aee64c",
+          "bytes": 2143653
+        }
+      ]
+    },
+    {
+      "id": "slide-6",
+      "number": 6,
+      "order": 6,
+      "title": "Почему сейчас",
+      "file": "slides/slide-06.html",
+      "status": "READY",
+      "owner": "unassigned",
+      "assets": [
+        {
+          "path": "assets/slide-06-background.png",
+          "kind": "image",
+          "hash": "c961e79f4aa687c7e36d7fa66f48fc8fcc634118c65fdbf73e628003d4ec0378",
+          "bytes": 1999295
+        },
+        {
+          "path": "assets/slide-06-card-dubai-arte.jpg",
+          "kind": "image",
+          "hash": "d2be648d7318c1c7e1fd06fbfd9fa652fdebb30f003cf6eeb7f2ce15d8285347",
+          "bytes": 442145
+        },
+        {
+          "path": "assets/slide-06-card-las-vegas-area15.jpg",
+          "kind": "image",
+          "hash": "99a4d173530a12bc79d4ee5d3271e304c55d83e138ab3d475c6df661b40af0ce",
+          "bytes": 267665
+        },
+        {
+          "path": "assets/slide-06-card-las-vegas-sphere.jpg",
+          "kind": "image",
+          "hash": "03fdd87c4c6953fd562ad390a6e9691046150d1c994c66641d3c32f2cc5f181e",
+          "bytes": 786593
+        },
+        {
+          "path": "assets/slide-06-card-london-outernet.jpg",
+          "kind": "image",
+          "hash": "4c6571e2a6fbaa7ec803dbabe94701fbb39992fa955331d4e02275fe038cee53",
+          "bytes": 359270
+        },
+        {
+          "path": "assets/slide-06-card-miami-superblue.jpg",
+          "kind": "image",
+          "hash": "18f42e388b01b7209a62396fc3a7324cf1426522e6500f822d674f836253cbf8",
+          "bytes": 201514
+        },
+        {
+          "path": "assets/slide-06-card-tokyo-teamlab.jpg",
+          "kind": "image",
+          "hash": "de4c101675d32c015e5b6c6c22ebe14cc98b933784ceaa548a365cd315223467",
+          "bytes": 1152755
+        }
+      ]
+    },
+    {
+      "id": "slide-8",
+      "number": 8,
+      "order": 8,
+      "title": "Ценность возникает уже на этапе концепта",
+      "file": "slides/slide-08.html",
+      "status": "READY",
+      "owner": "unassigned",
+      "assets": [
+        {
+          "path": "assets/slide-08-background.png",
+          "kind": "image",
+          "hash": "c77914412f5e394e3a37baf4d6e3b514ad9ae730804b93dd5ad2c9a096d59b8b",
+          "bytes": 2230207
+        },
+        {
+          "path": "assets/slide-08-full-video.mp4",
+          "kind": "video",
+          "hash": "1ae88644b505d23dab39019374a66398febbe2c37c426f6e5b0e0445bb6a0500",
+          "bytes": 8304379
+        },
+        {
+          "path": "assets/slide-08-poster.png",
+          "kind": "image",
+          "hash": "40ebe384dc1edfbb2d80b543df716d0623174b84011e1ee88ace439ae6055152",
+          "bytes": 2104560
+        }
+      ]
+    },
+    {
+      "id": "slide-9",
+      "number": 9,
+      "order": 9,
+      "title": "Роадмап запуска проекта",
+      "file": "slides/slide-09.html",
+      "status": "READY",
+      "owner": "unassigned",
+      "assets": [
+        {
+          "path": "assets/slide-09-02.png",
+          "kind": "image",
+          "hash": "0b0b4d122118fb7e7d1d975d9a4e6afcd36755afa11e67845c31efedb3606b1d",
+          "bytes": 1570615,
+          "unused": true
+        },
+        {
+          "path": "assets/slide-09-background.mp4",
+          "kind": "video",
+          "hash": "557aac3c82927954ef95e93f6b5d5a206f4119b10d8e60f9c2609d01673c6de0",
+          "bytes": 3654128
+        },
+        {
+          "path": "assets/slide-09-loop.mp4",
+          "kind": "video",
+          "hash": "dca88b61f56ba7e751c65f97f82bb288a367df23e620a965ae9765d085f508f4",
+          "bytes": 1417554
+        }
+      ]
+    },
+    {
+      "id": "slide-10",
+      "number": 10,
+      "order": 10,
+      "title": "От концепции до запуска",
+      "file": "slides/slide-10.html",
+      "status": "READY",
+      "owner": "unassigned",
+      "assets": [
+        {
+          "path": "assets/slide-10-background-20260606.png",
+          "kind": "image",
+          "bytes": 1379085,
+          "hash": "4c3e2f5b52561cd850efe88422b484fe0d8e1e09d3895526799894f412fca0e5"
+        },
+        {
+          "path": "assets/slide-10-background-20260529-v2.png",
+          "kind": "image",
+          "bytes": 2207913,
+          "hash": "515553248166af416f1aaee1b1057e4850253e3b232daa4162818befca411729",
+          "unused": true
+        },
+        {
+          "path": "assets/slide-10.png",
+          "kind": "image",
+          "hash": "881d93b9694197ccd18c4013f07756693e71126b5bbdb5ff2653672f961b515f",
+          "bytes": 1644585,
+          "unused": true
+        }
+      ]
+    },
+    {
+      "id": "slide-11",
+      "number": 11,
+      "order": 11,
+      "title": "Модель участия: создание, запуск и управление",
+      "file": "slides/slide-11.html",
+      "status": "READY",
+      "owner": "unassigned",
+      "assets": [
+        {
+          "path": "assets/slide-11-scene-01-20260530.png",
+          "kind": "image",
+          "hash": "84664012ba78bc47814368ab793c0664eb70922f4f07f4c082452455869e9521",
+          "bytes": 1421253
+        },
+        {
+          "path": "assets/slide-11-scene-03-bridge-20260530.mp4",
+          "kind": "video",
+          "hash": "2ace74832cc3b8ebef51451dfb847322e85afa3c60f757c96980c19447b03143",
+          "bytes": 614239
+        },
+        {
+          "path": "assets/slide-11-scene-04-bridge-20260530.mp4",
+          "kind": "video",
+          "hash": "35b12bfaa3ffbe96a0eb8bcac8de0a1555754b1e3d5778298e3ba7940c1c4da4",
+          "bytes": 4088017
+        },
+        {
+          "path": "assets/slide-11-scene-05-bridge-20260530.mp4",
+          "kind": "video",
+          "hash": "5f5b043bd98f80ad43f3e9e5ee421c8b91116da83ee267b0d59dfc5d26bd1ac3",
+          "bytes": 1228785
+        },
+        {
+          "path": "assets/slide-11-scene-06-bridge-20260530.mp4",
+          "kind": "video",
+          "hash": "7de340e1cff8e44aa38077b3590ae76a926508b37bc56f89b9814072cdf49b9e",
+          "bytes": 1182801
+        },
+        {
+          "path": "assets/slide-11-scene-07-bridge-20260530.mp4",
+          "kind": "video",
+          "hash": "a0436f5e9c6d0364e6bad900978e1c6685913beeb7907f4418942ecb08ca4f68",
+          "bytes": 1309376
+        },
+        {
+          "path": "assets/slide-11-scene-08-loop-20260530.mp4",
+          "kind": "video",
+          "hash": "00c8442d53c20dcef4ddb4609d0280bf7cac6ab0bc29d724c476a83d467b720e",
+          "bytes": 1116267
+        }
+      ]
+    }
+  ],
+  "sharedAssets": [
+    {
+      "path": "assets/Change_Slides.wav",
+      "kind": "audio",
+      "hash": "49ed6e9922d611f7666f30bd3c58ab6c40c4e3d216c995d2602431d552a02830",
+      "bytes": 122244
+    },
+    {
+      "path": "assets/Arcade Afterglow.mp3",
+      "kind": "audio",
+      "hash": "50eede3fbb64f7576d87c7bd2976cf61ec6e5cb27bff48f0594b613967de268d",
+      "bytes": 4540302
+    },
+    {
+      "path": "assets/flags/en.svg",
+      "kind": "image",
+      "hash": "c454e7f550421a83f5914f4df711c9f094b1dd65edfc5d9874bd7068fecad8be",
+      "bytes": 411
+    },
+    {
+      "path": "assets/flags/ru.svg",
+      "kind": "image",
+      "hash": "7b4a5953d54fdee00930cfd998b69b5fee16327b5ceefa25ca1c17ecae607f95",
+      "bytes": 288
+    },
+    {
+      "path": "assets/flags/th.svg",
+      "kind": "image",
+      "hash": "49469db220c934a845fb8065b045037e6333c0e578496d3bb9b4465a0451405c",
+      "bytes": 259
+    },
+    {
+      "path": "assets/flags/zh.svg",
+      "kind": "image",
+      "hash": "8f3be45b2d0f437423aa2c07c873cd59ae54880feaac4934e6ccd073a215f731",
+      "bytes": 666
+    }
+  ]
+}

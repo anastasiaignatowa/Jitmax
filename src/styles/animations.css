@@ -1,0 +1,211 @@
+      /* ===========================================
+         KEYFRAMES
+         =========================================== */
+      @keyframes imageWake {
+        from {
+          opacity: 0.45;
+          transform: scale(1.018);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes imageDrift {
+        from {
+          transform: scale(1) translate3d(0, 0, 0);
+        }
+        to {
+          transform: scale(1.012) translate3d(-0.4%, -0.2%, 0);
+        }
+      }
+
+      @keyframes sweepOn {
+        0% {
+          opacity: 0;
+          transform: translateX(-34%) rotate(0.001deg);
+        }
+        16% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0.3;
+          transform: translateX(24%) rotate(0.001deg);
+        }
+      }
+
+      @keyframes businessWake {
+        from {
+          opacity: 0.44;
+          transform: scale(1.015);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes businessDrift {
+        from {
+          transform: scale(1) translate3d(0, 0, 0);
+        }
+        to {
+          transform: scale(1.01) translate3d(-0.25%, -0.2%, 0);
+        }
+      }
+
+      @keyframes hubWake {
+        from {
+          opacity: 0.5;
+          transform: scale(1.014);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes hubDrift {
+        from {
+          transform: scale(1) translate3d(0, 0, 0);
+        }
+        to {
+          transform: scale(1.01) translate3d(-0.25%, -0.22%, 0);
+        }
+      }
+
+      @keyframes hubLight {
+        from {
+          opacity: 0.2;
+          transform: translateX(-1.2%);
+        }
+        to {
+          opacity: 0.44;
+          transform: translateX(1.4%);
+        }
+      }
+
+      @keyframes scenarioWake {
+        from {
+          opacity: 0.48;
+          transform: scale(1.014);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes scenarioDrift {
+        from {
+          transform: scale(1) translate3d(0, 0, 0);
+        }
+        to {
+          transform: scale(1.01) translate3d(-0.18%, -0.12%, 0);
+        }
+      }
+
+      @keyframes timingWake {
+        from {
+          opacity: 0.5;
+          transform: scale(1.014);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes timingDrift {
+        from {
+          transform: scale(1) translate3d(0, 0, 0);
+        }
+        to {
+          transform: scale(1.012) translate3d(-0.18%, -0.16%, 0);
+        }
+      }
+
+      @keyframes timingPulse {
+        from {
+          opacity: 0.22;
+          transform: scale(0.98);
+        }
+        to {
+          opacity: 0.48;
+          transform: scale(1.02);
+        }
+      }
+
+      @keyframes hubPulse {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.72);
+        }
+        18% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+        58% {
+          opacity: 0.55;
+          transform: translate(-50%, -50%) scale(1.18);
+        }
+        100% {
+          opacity: 0.95;
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+
+      @keyframes businessDash {
+        from {
+          stroke-dashoffset: 0;
+        }
+        to {
+          stroke-dashoffset: -72;
+        }
+      }
+
+      @keyframes pointOn {
+        from {
+          opacity: 0;
+          transform: scale(0.4);
+        }
+        to {
+          opacity: 0.88;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes definitionWake {
+        from {
+          opacity: 0.46;
+          transform: scale(1.012);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes lineReveal {
+        from {
+          opacity: 0;
+          transform: scaleX(0);
+        }
+        to {
+          opacity: 0.92;
+          transform: scaleX(1);
+        }
+      }
+
+      @keyframes corePulse {
+        0%,
+        100% {
+          opacity: 0.78;
+          box-shadow: 0 0 28px rgba(57, 216, 255, 0.24);
+        }
+        50% {
+          opacity: 1;
+          box-shadow: 0 0 52px rgba(57, 216, 255, 0.42);
+        }
+      }

@@ -1,0 +1,17 @@
+{
+  "files": [
+    "scripts/asset-utils.js",
+    "scripts/i18n.js",
+    "scripts/navigation.js",
+    "scripts/background-audio.js",
+    "scripts/media-controller.js",
+    "scripts/hub-slider.js",
+    "scripts/scenario-modes.js",
+    "scripts/scenario-modal.js",
+    "scripts/value-modal.js",
+    "scripts/roadmap-background.js",
+    "scripts/roadmap-scope-modal.js",
+    "scripts/participation-slide.js",
+    "deck.js"
+  ]
+}

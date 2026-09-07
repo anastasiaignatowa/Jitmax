@@ -1,0 +1,441 @@
+      /* ===========================================
+         THEME
+         =========================================== */
+      :root {
+        --bg-primary: #070a0b;
+        --text-primary: #f4f7f4;
+        --text-secondary: rgba(244, 247, 244, 0.78);
+        --text-muted: rgba(244, 247, 244, 0.5);
+        --aqua: #39d8ff;
+        --aqua-soft: rgba(57, 216, 255, 0.34);
+        --warm: #d6b66a;
+        --warm-soft: rgba(214, 182, 106, 0.32);
+        --glass: rgba(255, 255, 255, 0.08);
+        --font-display: 'Bebas Neue', 'Geologica', sans-serif;
+        --font-body: 'Geologica', sans-serif;
+        --title-size: clamp(4rem, 11.5svh, 8.2rem);
+        --lead-size: clamp(1.25rem, 3.1svh, 2.05rem);
+        --sublead-size: clamp(0.9rem, 2svh, 1.22rem);
+        --meta-size: clamp(0.72rem, 1.3svh, 0.92rem);
+        --slide-padding: clamp(1.15rem, 5svh, 4.6rem);
+        --content-gap: clamp(0.65rem, 1.9svh, 1.2rem);
+        --element-gap: clamp(0.3rem, 1svh, 0.75rem);
+        --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        --duration-slow: 1.35s;
+        --duration-normal: 0.78s;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* ===========================================
+         VIEWPORT FITTING: MANDATORY BASE STYLES
+         Include this ENTIRE file in every presentation.
+         These styles ensure slides fit exactly in the viewport.
+         =========================================== */
+
+      /* 1. Lock html/body to viewport */
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+      }
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      html[data-preview-slide] {
+        scroll-snap-type: none;
+      }
+
+      html[data-preview-slide='1'] .slide:not(#slide-1),
+      html[data-preview-slide='2'] .slide:not(#slide-2),
+      html[data-preview-slide='3'] .slide:not(#slide-3),
+      html[data-preview-slide='4'] .slide:not(#slide-4),
+      html[data-preview-slide='5'] .slide:not(#slide-5),
+      html[data-preview-slide='6'] .slide:not(#slide-6),
+      html[data-preview-slide='8'] .slide:not(#slide-8),
+      html[data-preview-slide='9'] .slide:not(#slide-9),
+      html[data-preview-slide='10'] .slide:not(#slide-10),
+      html[data-preview-slide='11'] .slide:not(#slide-11) {
+        display: none;
+      }
+
+      /* 2. Each slide = exact viewport height */
+      .slide {
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        transform: translate3d(0, 100%, 0);
+        transition: transform 920ms var(--ease-out-expo);
+        will-change: transform;
+        box-shadow: none;
+      }
+
+      html.is-fast-nav .slide {
+        transition-duration: 180ms;
+      }
+
+      html.is-initializing-slide .slide {
+        transition: none;
+      }
+
+      .slide.is-past,
+      .slide.is-current {
+        transform: translate3d(0, 0, 0);
+      }
+
+      .deck > .slide:nth-child(1) {
+        z-index: 1;
+      }
+
+      .deck > .slide:nth-child(2) {
+        z-index: 2;
+      }
+
+      .deck > .slide:nth-child(3) {
+        z-index: 3;
+      }
+
+      .deck > .slide:nth-child(4) {
+        z-index: 4;
+      }
+
+      .deck > .slide:nth-child(5) {
+        z-index: 5;
+      }
+
+      .deck > .slide:nth-child(6) {
+        z-index: 6;
+      }
+
+      .deck > .slide:nth-child(7) {
+        z-index: 7;
+      }
+
+      .deck > .slide:nth-child(8) {
+        z-index: 8;
+      }
+
+      .deck > .slide:nth-child(9) {
+        z-index: 9;
+      }
+
+      .deck > .slide:nth-child(10) {
+        z-index: 10;
+      }
+
+      .deck > .slide:nth-child(11) {
+        z-index: 11;
+      }
+
+      /* 3. Content container with flex for centering */
+      .slide-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-height: 100%;
+        overflow: hidden;
+        padding: var(--slide-padding);
+      }
+
+      /* 4. ALL typography uses clamp() for responsive scaling */
+      :root {
+        --h2-size: clamp(1.25rem, 3.5svh, 2.5rem);
+        --h3-size: clamp(1rem, 2.5svh, 1.75rem);
+        --body-size: clamp(0.75rem, 1.5svh, 1.125rem);
+        --small-size: clamp(0.65rem, 1svh, 0.875rem);
+      }
+
+      /* 5. Cards/containers use viewport-relative max sizes */
+      .card,
+      .container,
+      .content-box {
+        max-width: min(90vw, 1000px);
+        max-height: min(80vh, 700px);
+      }
+
+      /* 6. Lists auto-scale with viewport */
+      .feature-list,
+      .bullet-list {
+        gap: clamp(0.4rem, 1vh, 1rem);
+      }
+
+      .feature-list li,
+      .bullet-list li {
+        font-size: var(--body-size);
+        line-height: 1.4;
+      }
+
+      /* 7. Grids adapt to available space */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+        gap: clamp(0.5rem, 1.5vw, 1rem);
+      }
+
+      /* 8. Images constrained to viewport */
+      img,
+      .image-container {
+        max-width: 100%;
+        max-height: min(50vh, 400px);
+        object-fit: contain;
+      }
+
+      /* ===========================================
+         RESPONSIVE BREAKPOINTS
+         Aggressive scaling for smaller viewports
+         =========================================== */
+
+      /* Short viewports (< 700px height) */
+      @media (max-height: 700px) {
+        :root {
+          --slide-padding: clamp(0.75rem, 3svh, 2rem);
+          --content-gap: clamp(0.4rem, 1.5svh, 1rem);
+          --title-size: clamp(2.3rem, 8svh, 4.2rem);
+          --h2-size: clamp(1rem, 3svh, 1.75rem);
+        }
+      }
+
+      /* Very short viewports (< 600px height) */
+      @media (max-height: 600px) {
+        :root {
+          --slide-padding: clamp(0.5rem, 2.5svh, 1.5rem);
+          --content-gap: clamp(0.3rem, 1svh, 0.75rem);
+          --title-size: clamp(1.85rem, 7svh, 3.1rem);
+          --body-size: clamp(0.7rem, 1.2svh, 0.95rem);
+        }
+
+        .nav-dots,
+        .keyboard-hint,
+        .decorative {
+          display: none;
+        }
+      }
+
+      /* Extremely short (landscape phones, < 500px height) */
+      @media (max-height: 500px) {
+        :root {
+          --slide-padding: clamp(0.4rem, 2svh, 1rem);
+          --title-size: clamp(1.45rem, 6svh, 2.15rem);
+          --h2-size: clamp(0.9rem, 2.5svh, 1.25rem);
+          --body-size: clamp(0.65rem, 1svh, 0.85rem);
+        }
+      }
+
+      /* Narrow viewports (< 600px width) */
+      @media (max-width: 600px) {
+        :root {
+          --title-size: clamp(2rem, 7.8svh, 3.1rem);
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ===========================================
+         REDUCED MOTION
+         Respect user preferences
+         =========================================== */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.2s !important;
+        }
+
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      /* ===========================================
+         BASE PAGE
+         =========================================== */
+      body {
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        font-family: var(--font-body);
+        line-height: 1.2;
+      }
+
+      .deck {
+        position: fixed;
+        inset: 0;
+        height: 100vh;
+        height: 100dvh;
+        overflow: hidden;
+        background: var(--bg-primary);
+      }
+
+      [data-i18n] {
+        overflow-wrap: anywhere;
+      }
+
+      html[lang='zh-Hans'] body,
+      html[lang='th'] body {
+        line-height: 1.24;
+      }
+
+      .language-switcher {
+        position: fixed;
+        top: clamp(0.7rem, 2svh, 1.2rem);
+        right: clamp(0.7rem, 2svh, 1.2rem);
+        z-index: 80;
+        font-family: var(--font-body);
+        color: var(--text-primary);
+        user-select: none;
+      }
+
+      .language-toggle,
+      .language-option {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        border: 1px solid rgba(244, 247, 244, 0.18);
+        background: rgba(7, 10, 11, 0.58);
+        color: var(--text-primary);
+        font: inherit;
+        cursor: pointer;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+      }
+
+      .language-toggle {
+        position: relative;
+        width: 2.59rem;
+        min-width: 2.59rem;
+        height: 2.59rem;
+        justify-content: center;
+        padding: 0.08rem;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        background:
+          linear-gradient(rgba(255, 252, 244, 0.9), rgba(255, 252, 244, 0.9))
+            padding-box,
+          linear-gradient(
+              115deg,
+              rgba(126, 82, 28, 0.82),
+              rgba(214, 182, 106, 0.86),
+              rgba(255, 240, 181, 0.96),
+              rgba(181, 126, 43, 0.92),
+              rgba(255, 249, 222, 0.88),
+              rgba(146, 96, 34, 0.82)
+            )
+            border-box;
+        box-shadow:
+          0 0.65rem 1.45rem rgba(104, 81, 45, 0.16),
+          inset 0 0 0 1px rgba(255, 249, 226, 0.72);
+      }
+
+      .language-toggle::after {
+        display: none;
+      }
+
+      .language-flag {
+        width: 1.15rem;
+        height: 0.78rem;
+        flex: 0 0 auto;
+        border-radius: 0.16rem;
+        object-fit: cover;
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18);
+      }
+
+      .language-toggle .language-flag {
+        width: 1.9rem;
+        height: 1.9rem;
+        border-radius: 50%;
+      }
+
+      .language-toggle-label,
+      .language-option-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+
+      .language-toggle-name,
+      .language-option-name {
+        font-size: 0.66rem;
+        white-space: nowrap;
+      }
+
+      .language-toggle-name {
+        color: rgba(244, 247, 244, 0.68);
+      }
+
+      .language-option-label {
+        color: rgba(32, 36, 40, 0.94);
+      }
+
+      .language-option-name {
+        color: rgba(88, 73, 47, 0.76);
+      }
+
+      .language-menu {
+        position: absolute;
+        top: calc(100% + 0.38rem);
+        right: 0;
+        display: grid;
+        min-width: 10.2rem;
+        padding: 0.3rem;
+        border: 1px solid transparent;
+        border-radius: 0.72rem;
+        background:
+          linear-gradient(rgba(255, 252, 244, 0.96), rgba(255, 252, 244, 0.96))
+            padding-box,
+          linear-gradient(
+              135deg,
+              rgba(126, 82, 28, 0.5),
+              rgba(214, 182, 106, 0.78),
+              rgba(255, 240, 181, 0.88),
+              rgba(181, 126, 43, 0.66)
+            )
+            border-box;
+        box-shadow:
+          0 1.1rem 2.4rem rgba(104, 81, 45, 0.18),
+          inset 0 0 0 1px rgba(255, 249, 226, 0.66);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+      }
+
+      .language-menu[hidden] {
+        display: none;
+      }
+
+      .language-option {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 0.58rem 0.62rem;
+        border-color: transparent;
+        border-radius: 0.48rem;
+        background: transparent;
+        color: #202428;
+        text-align: left;
+      }
+
+      .language-option:hover,
+      .language-option:focus-visible,
+      .language-option.is-active {
+        background: rgba(214, 182, 106, 0.14);
+        box-shadow: inset 0 0 0 1px rgba(214, 182, 106, 0.3);
+      }
+
+      .language-option:focus-visible {
+        outline: 2px solid rgba(214, 182, 106, 0.58);
+        outline-offset: 1px;
+      }

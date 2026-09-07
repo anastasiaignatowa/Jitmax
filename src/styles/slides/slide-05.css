@@ -1,0 +1,1482 @@
+      /* ===========================================
+         SLIDE 05: PROGRAMMABLE PLATFORM
+         =========================================== */
+      .scenario-slide,
+      .scenario-modal {
+        --scenario-gold-border: linear-gradient(
+          115deg,
+          rgba(126, 82, 28, 0.82),
+          rgba(214, 182, 106, 0.86),
+          rgba(255, 240, 181, 0.96),
+          rgba(181, 126, 43, 0.92),
+          rgba(255, 249, 222, 0.88),
+          rgba(146, 96, 34, 0.82)
+        );
+      }
+
+      .scenario-slide {
+        isolation: isolate;
+        background: #efe7d8;
+        color: #202428;
+      }
+
+      .scenario-slide .slide-number {
+        color: rgba(32, 36, 40, 0.72);
+      }
+
+      .scenario-slide .slide-number::after {
+        background: linear-gradient(
+          90deg,
+          rgba(128, 99, 49, 0),
+          rgba(128, 99, 49, 0.82)
+        );
+      }
+
+      .scenario-bg {
+        position: absolute;
+        inset: 0;
+        z-index: -4;
+        background-image: url('assets/slide-04-background.png');
+        background-position: center center;
+        background-size: cover;
+        transform: none;
+        animation: none;
+      }
+
+      .scenario-content {
+        width: 100%;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: clamp(2.75rem, 5.75svh, 4.8rem) clamp(6.85rem, 8.9vw, 10.55rem)
+          clamp(1.6rem, 3.2svh, 2.4rem);
+      }
+
+      .scenario-slide .kicker {
+        color: #806331;
+      }
+
+      .scenario-slide .kicker::before {
+        background: linear-gradient(90deg, currentColor, rgba(128, 99, 49, 0));
+      }
+
+      .scenario-title {
+        max-width: 18ch;
+        color: #202428;
+        font-family: var(--font-body);
+        font-size: clamp(2.25rem, 5.2svh, 4.05rem);
+        font-weight: 550;
+        line-height: 0.98;
+        letter-spacing: 0;
+        text-wrap: balance;
+        text-shadow: none;
+      }
+
+      .scenario-line {
+        max-width: 62ch;
+        margin-top: clamp(0.52rem, 1.25svh, 0.82rem);
+        color: rgba(32, 36, 40, 0.74);
+        font-size: clamp(0.9rem, 1.85svh, 1.12rem);
+        font-weight: 600;
+        line-height: 1.26;
+        text-shadow: none;
+      }
+
+      html body .scenario-slide .scenario-copy > .scenario-line.reveal {
+        opacity: 0;
+        transform: translateY(clamp(1.1rem, 2.4svh, 2rem));
+        transition:
+          opacity 680ms var(--ease-out-expo),
+          transform 680ms var(--ease-out-expo);
+      }
+
+      html body .slide.scenario-slide.visible .scenario-copy > .scenario-title.reveal {
+        transition-delay: 0.18s;
+      }
+
+      html body .slide.scenario-slide.visible .scenario-copy > .scenario-line.reveal {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.98s;
+      }
+
+      .scenario-modes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(0.32rem, 0.78svh, 0.5rem);
+        margin-top: clamp(0.58rem, 1.28svh, 0.86rem);
+      }
+
+      .scenario-chip {
+        border: 1px solid rgba(154, 118, 53, 0.28);
+        border-radius: 999px;
+        padding: clamp(0.34rem, 0.78svh, 0.48rem)
+          clamp(0.72rem, 1.5svh, 0.98rem);
+        color: rgba(32, 36, 40, 0.82);
+        background: rgba(255, 255, 255, 0.44);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.36);
+        font-family: inherit;
+        font-size: clamp(0.72rem, 1.28svh, 0.9rem);
+        font-weight: 700;
+        line-height: 1.08;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        text-align: center;
+        white-space: normal;
+      }
+
+      button.scenario-chip {
+        cursor: pointer;
+        transition:
+          background 240ms ease,
+          border-color 240ms ease,
+          color 240ms ease,
+          transform 240ms var(--ease-out-expo);
+      }
+
+      button.scenario-chip:hover,
+      button.scenario-chip.is-active {
+        border-color: rgba(154, 118, 53, 0.58);
+        color: #202428;
+        background: rgba(255, 252, 244, 0.84);
+        transform: translateY(-1px);
+      }
+
+      .scenario-layout {
+        display: grid;
+        --scenario-column-gap: clamp(2.2rem, 3.6vw, 4rem);
+        --scenario-column-half-gap: clamp(1.1rem, 1.8vw, 2rem);
+        --scenario-stack-gap: clamp(2.2rem, 5svh, 3.9rem);
+        --scenario-stack-half-gap: clamp(1.1rem, 2.5svh, 1.95rem);
+        --scenario-left-stack-offset: clamp(2rem, 4.5svh, 3.2rem);
+        --scenario-text-inset: clamp(1.05rem, 1.7vw, 2rem);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: var(--scenario-column-gap);
+        align-content: stretch;
+        align-items: center;
+        height: 100%;
+        min-height: 0;
+        position: relative;
+      }
+
+      .scenario-copy {
+        position: absolute;
+        top: calc(50% + var(--scenario-left-stack-offset));
+        left: var(--scenario-text-inset);
+        width: calc(
+          50% - var(--scenario-column-half-gap) - var(--scenario-text-inset)
+        );
+        transform: translateY(calc(-100% - var(--scenario-stack-half-gap)));
+        padding-top: 0;
+      }
+
+      .scenario-cards {
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        gap: var(--scenario-stack-gap);
+        min-width: 0;
+        height: 100%;
+      }
+
+      .scenario-card-yoga {
+        width: 100%;
+      }
+
+      .scenario-card-event {
+        width: 100%;
+      }
+
+      .scenario-explain {
+        position: absolute;
+        top: calc(50% + var(--scenario-left-stack-offset));
+        left: var(--scenario-text-inset);
+        transform: translateY(var(--scenario-stack-half-gap));
+        width: calc(
+          50% - var(--scenario-column-half-gap) - var(--scenario-text-inset)
+        );
+        max-width: 52rem;
+        padding: clamp(1.1rem, 2.4svh, 1.65rem)
+          clamp(1.25rem, 2.2vw, 2.05rem)
+          clamp(1.1rem, 2.4svh, 1.65rem) 0;
+        color: rgba(32, 36, 40, 0.76);
+      }
+
+      .slide.scenario-slide .scenario-explain.reveal {
+        opacity: 1;
+        transform: translateY(var(--scenario-stack-half-gap));
+        transition: none;
+      }
+
+      .scenario-explain > .scenario-card-meta,
+      .scenario-explain-title,
+      .scenario-explain-text,
+      .scenario-punchline {
+        opacity: 0;
+        transform: translateY(0.75rem);
+        transition:
+          opacity 560ms var(--ease-out-expo),
+          transform 560ms var(--ease-out-expo);
+      }
+
+      .slide.scenario-slide.visible .scenario-explain > .scenario-card-meta,
+      .slide.scenario-slide.visible .scenario-explain-title,
+      .slide.scenario-slide.visible .scenario-explain-text,
+      .slide.scenario-slide.visible .scenario-punchline {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .slide.scenario-slide.visible .scenario-explain > .scenario-card-meta {
+        transition-delay: 1.58s;
+      }
+
+      .slide.scenario-slide.visible .scenario-explain-title {
+        transition-delay: 1.78s;
+      }
+
+      .slide.scenario-slide.visible .scenario-explain-text {
+        transition-delay: 1.98s;
+      }
+
+      .slide.scenario-slide.visible .scenario-punchline {
+        transition-delay: 2.18s;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html body .scenario-slide .scenario-copy > .scenario-line.reveal,
+        html body .slide.scenario-slide.visible .scenario-copy > .scenario-line.reveal,
+        .slide.scenario-slide.visible .scenario-explain > .scenario-card-meta,
+        .slide.scenario-slide.visible .scenario-explain-title,
+        .slide.scenario-slide.visible .scenario-explain-text,
+        .slide.scenario-slide.visible .scenario-punchline,
+        .scenario-explain > .scenario-card-meta,
+        .scenario-explain-title,
+        .scenario-explain-text,
+        .scenario-punchline {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+      }
+
+      .scenario-explain-title {
+        margin-top: clamp(0.24rem, 0.58svh, 0.4rem);
+        color: #202428;
+        font-size: clamp(1.6rem, 3.2svh, 2.45rem);
+        line-height: 0.98;
+        font-weight: 700;
+      }
+
+      .scenario-explain-text {
+        max-width: 56ch;
+        margin-top: clamp(0.42rem, 0.92svh, 0.64rem);
+        font-size: clamp(0.82rem, 1.62svh, 1rem);
+        line-height: 1.46;
+        font-weight: 600;
+      }
+
+      .scenario-card {
+        position: relative;
+        display: grid;
+        --scenario-card-gap: clamp(0.44rem, 0.9vw, 0.86rem);
+        --scenario-card-mode-gap: clamp(0.58rem, 1.28svh, 0.86rem);
+        --scenario-card-media-width: 55%;
+        grid-template-columns: minmax(13rem, var(--scenario-card-media-width)) minmax(0, 1fr);
+        grid-template-rows: auto auto;
+        column-gap: var(--scenario-card-gap);
+        row-gap: var(--scenario-card-mode-gap);
+        align-items: start;
+        min-height: 0;
+        overflow: visible;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      html body .slide.scenario-slide .scenario-card.reveal {
+        opacity: 0;
+        transform: perspective(64rem) rotateX(-88deg) translateY(-1.4rem)
+          scale(0.96);
+        transform-origin: 50% 0%;
+        transform-style: preserve-3d;
+        transition: none;
+        will-change: transform, opacity;
+      }
+
+      html body .slide.scenario-slide.visible .scenario-card.reveal {
+        animation: scenarioCardDropIn 1.18s var(--ease-out-expo) both;
+      }
+
+      html body .slide.scenario-slide.visible .scenario-card-yoga.reveal {
+        animation-delay: 1.2s;
+      }
+
+      html body .slide.scenario-slide.visible .scenario-card-event.reveal {
+        animation-delay: 2.18s;
+      }
+
+      @keyframes scenarioCardDropIn {
+        0% {
+          opacity: 0;
+          transform: perspective(64rem) rotateX(-88deg) translateY(-1.4rem)
+            scale(0.96);
+        }
+
+        48% {
+          opacity: 1;
+          transform: perspective(64rem) rotateX(12deg) translateY(0.28rem)
+            scale(1.025);
+        }
+
+        66% {
+          opacity: 1;
+          transform: perspective(64rem) rotateX(-5deg) translateY(-0.12rem)
+            scale(0.992);
+        }
+
+        82% {
+          opacity: 1;
+          transform: perspective(64rem) rotateX(2deg) translateY(0.04rem)
+            scale(1.006);
+        }
+
+        100% {
+          opacity: 1;
+          transform: perspective(64rem) rotateX(0deg) translateY(0)
+            scale(1);
+        }
+      }
+
+      @media (min-width: 861px) {
+        .slide.scenario-slide .scenario-modes {
+          position: relative;
+          z-index: 4;
+        }
+
+        .slide.scenario-slide button.scenario-chip {
+          position: relative;
+          z-index: 1;
+        }
+
+        .scenario-line {
+          max-width: min(38ch, 30vw);
+        }
+
+        .scenario-title {
+          white-space: pre-line;
+        }
+
+        html body .slide.scenario-slide .scenario-card.reveal {
+          transform: scaleX(0.98);
+          transform-origin: 50% 50%;
+          transform-style: flat;
+          backface-visibility: visible;
+          clip-path: inset(0 calc(50% - 1px) 0 calc(50% - 1px));
+          will-change: clip-path, opacity, transform;
+        }
+
+        html body .slide.scenario-slide.visible .scenario-card.reveal {
+          animation: scenarioCardLineRevealDesktop 0.9s cubic-bezier(0.2, 0.86, 0.22, 1)
+            both;
+        }
+
+        html body .slide.scenario-slide.visible .scenario-card-yoga.reveal {
+          animation-delay: 0.92s;
+        }
+
+        html body .slide.scenario-slide.visible .scenario-card-event.reveal {
+          animation-delay: 1.98s;
+        }
+
+        @keyframes scenarioCardLineRevealDesktop {
+          0% {
+            opacity: 0;
+            clip-path: inset(0 calc(50% - 1px) 0 calc(50% - 1px));
+            transform: scaleX(0.98);
+          }
+
+          12% {
+            opacity: 1;
+          }
+
+          52% {
+            opacity: 1;
+            clip-path: inset(0 0 0 0);
+            transform: scaleX(1);
+          }
+
+          74% {
+            opacity: 1;
+            clip-path: inset(0 0 0 0);
+            transform: scaleX(1);
+          }
+
+          100% {
+            opacity: 1;
+            clip-path: inset(0 0 0 0);
+            transform: scaleX(1);
+          }
+        }
+
+        @keyframes scenarioCardLineRevealFromLeftDesktop {
+          0% {
+            opacity: 0;
+            clip-path: inset(0 100% 0 0);
+            transform: scaleX(0.98);
+            transform-origin: left center;
+          }
+
+          12% {
+            opacity: 1;
+          }
+
+          54% {
+            opacity: 1;
+            clip-path: inset(0 0 0 0);
+            transform: scaleX(1);
+            transform-origin: left center;
+          }
+
+          76% {
+            opacity: 1;
+            clip-path: inset(0 0 0 0);
+            transform: scaleX(1);
+            transform-origin: left center;
+          }
+
+          100% {
+            opacity: 1;
+            clip-path: inset(0 0 0 0);
+            transform: scaleX(1);
+            transform-origin: left center;
+          }
+        }
+      }
+
+      @media (min-width: 861px) {
+        .slide.scenario-slide:not(.is-scenario-second-position) .scenario-cards {
+          position: absolute;
+          top: 50%;
+          right: clamp(0.7rem, 1.9vw, 2.7rem);
+          width: min(47.5vw, 58rem);
+          height: min(73vh, 47rem);
+          justify-content: center;
+          gap: 0;
+          transform: translateY(-50%);
+        }
+
+        html body
+          .slide.scenario-slide:not(.is-scenario-second-position)
+          .scenario-card-event.reveal {
+          position: absolute;
+          inset: auto 0 0 0;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          transform: translateY(clamp(0.8rem, 1.8svh, 1.3rem)) scale(0.98);
+          clip-path: inset(0 calc(50% - 1px) 0 calc(50% - 1px));
+          animation: none;
+        }
+
+        .slide.scenario-slide:not(.is-scenario-second-position)
+          .scenario-explain {
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+
+        .slide.scenario-slide:not(.is-scenario-second-position)
+          .scenario-explain
+          > .scenario-card-meta,
+        .slide.scenario-slide:not(.is-scenario-second-position)
+          .scenario-explain-title,
+        .slide.scenario-slide:not(.is-scenario-second-position)
+          .scenario-explain-text,
+        .slide.scenario-slide:not(.is-scenario-second-position)
+          .scenario-punchline {
+          opacity: 0;
+          transform: translateY(0.75rem);
+        }
+
+        .slide.scenario-slide .scenario-card-yoga {
+          transition: transform 760ms var(--ease-out-expo);
+        }
+
+        .slide.scenario-slide:not(.is-scenario-second-position)
+          .scenario-card-yoga
+          .scenario-card-body
+          > .scenario-card-meta {
+          margin-top: 0;
+        }
+
+        .slide.scenario-slide:not(.is-scenario-second-position)
+          .scenario-card-yoga
+          .scenario-card-visual {
+          border-radius: clamp(1.2rem, 3svh, 2.2rem) 80px
+            clamp(1.2rem, 3svh, 2.2rem) clamp(1.2rem, 3svh, 2.2rem);
+          box-shadow: none;
+        }
+
+        .slide.scenario-slide:not(.is-scenario-second-position)
+          .scenario-card-yoga
+          .scenario-card-title {
+          font-size: clamp(1.8rem, 4.2svh, 2.95rem);
+        }
+
+        .slide.scenario-slide:not(.is-scenario-second-position)
+          .scenario-card-yoga
+          .scenario-card-text {
+          max-width: 40ch;
+          font-size: clamp(0.82rem, 1.65svh, 1rem);
+          line-height: 1.34;
+        }
+
+        html body
+          .slide.scenario-slide.visible.is-scenario-second-position
+          .scenario-card-event.reveal {
+          animation: scenarioEventCardSecondRevealDesktop 1.05s cubic-bezier(0.2, 0.86, 0.22, 1)
+            5.35s both;
+        }
+
+        @keyframes scenarioEventCardSecondRevealDesktop {
+          0%,
+          26% {
+            opacity: 0;
+            visibility: hidden;
+            clip-path: inset(0 calc(50% - 1px) 0 calc(50% - 1px));
+            transform: translateY(clamp(0.8rem, 1.8svh, 1.3rem))
+              scale(0.98);
+          }
+
+          27% {
+            opacity: 0;
+            visibility: visible;
+            clip-path: inset(0 calc(50% - 1px) 0 calc(50% - 1px));
+            transform: translateY(clamp(0.8rem, 1.8svh, 1.3rem))
+              scale(0.98);
+          }
+
+          66% {
+            opacity: 1;
+            visibility: visible;
+            clip-path: inset(0 0 0 0);
+            transform: translateY(0) scale(1.012);
+          }
+
+          100% {
+            opacity: 1;
+            visibility: visible;
+            clip-path: inset(0 0 0 0);
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        .slide.scenario-slide.visible.is-scenario-second-position
+          .scenario-explain
+          > .scenario-card-meta {
+          transition-delay: 0.9s;
+        }
+
+        .slide.scenario-slide.visible.is-scenario-second-position
+          .scenario-explain-title {
+          position: relative;
+          width: fit-content;
+          transition-delay: 1.55s;
+        }
+
+        .slide.scenario-slide.visible.is-scenario-second-position
+          .scenario-explain-title::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -0.12em;
+          height: 0.13em;
+          border-radius: 999px;
+          background: linear-gradient(
+            90deg,
+            rgba(154, 118, 53, 0.08),
+            rgba(214, 182, 106, 0.82),
+            rgba(154, 118, 53, 0.14)
+          );
+          transform: scaleX(0);
+          transform-origin: 0 50%;
+          animation: scenarioExplainUnderlineDesktop 1.4s cubic-bezier(0.2, 0.86, 0.22, 1)
+            2.45s both;
+        }
+
+        .slide.scenario-slide.visible.is-scenario-second-position
+          .scenario-explain-text {
+          background:
+            linear-gradient(
+              90deg,
+              rgba(214, 182, 106, 0.2),
+              rgba(214, 182, 106, 0.08)
+            )
+            0 78% / 0 0.55em no-repeat;
+          transition-delay: 2.35s;
+          animation: scenarioExplainTextHighlightDesktop 1.45s cubic-bezier(0.2, 0.86, 0.22, 1)
+            3.2s both;
+        }
+
+        .slide.scenario-slide.visible.is-scenario-second-position
+          .scenario-punchline {
+          background:
+            linear-gradient(
+              90deg,
+              rgba(214, 182, 106, 0.26),
+              rgba(214, 182, 106, 0)
+            )
+            0 100% / 0 0.68em no-repeat;
+          transition-delay: 3.55s;
+          animation: scenarioExplainPunchlineHighlightDesktop 1.25s cubic-bezier(0.2, 0.86, 0.22, 1)
+            4.35s both;
+        }
+
+        @keyframes scenarioExplainUnderlineDesktop {
+          0% {
+            transform: scaleX(0);
+            opacity: 0;
+          }
+
+          18% {
+            opacity: 1;
+          }
+
+          100% {
+            transform: scaleX(1);
+            opacity: 1;
+          }
+        }
+
+        @keyframes scenarioExplainTextHighlightDesktop {
+          0% {
+            background-size: 0 0.55em;
+          }
+
+          100% {
+            background-size: 100% 0.55em;
+          }
+        }
+
+        @keyframes scenarioExplainPunchlineHighlightDesktop {
+          0% {
+            background-size: 0 0.68em;
+          }
+
+          100% {
+            background-size: 100% 0.68em;
+          }
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html body .slide.scenario-slide .scenario-card.reveal,
+        html body .slide.scenario-slide.visible .scenario-card.reveal {
+          animation: none;
+          opacity: 1;
+          transform: none;
+          clip-path: none;
+        }
+
+        .slide.scenario-slide.visible.is-scenario-second-position
+          .scenario-explain-title::after,
+        .slide.scenario-slide.visible.is-scenario-second-position
+          .scenario-explain-text,
+        .slide.scenario-slide.visible.is-scenario-second-position
+          .scenario-punchline {
+          animation: none;
+        }
+
+        .slide.scenario-slide.visible.is-scenario-second-position
+          .scenario-explain-title::after {
+          opacity: 1;
+          transform: scaleX(1);
+        }
+
+        .slide.scenario-slide.visible.is-scenario-second-position
+          .scenario-explain-text {
+          background-size: 100% 0.55em;
+        }
+
+        .slide.scenario-slide.visible.is-scenario-second-position
+          .scenario-punchline {
+          background-size: 100% 0.68em;
+        }
+      }
+
+      .scenario-card-visual {
+        position: relative;
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border: 0;
+        border-radius: clamp(1.1rem, 2.8svh, 1.9rem);
+        background: var(--scenario-image) center / cover no-repeat;
+        box-shadow:
+          0 1rem 2.8rem rgba(104, 81, 45, 0.14),
+          inset 0 1px 0 rgba(255, 255, 255, 0.38);
+        transition:
+          background-image 280ms ease,
+          filter 280ms ease;
+      }
+
+      .scenario-card-video {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: inherit;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 720ms ease;
+      }
+
+      .scenario-card-video.is-active {
+        opacity: 1;
+      }
+
+      .scenario-card-video.is-exiting {
+        opacity: 0;
+      }
+
+      .scenario-card-yoga[data-scenario-swipe] {
+        touch-action: pan-y;
+      }
+
+      @media (min-width: 861px) {
+        .slide.scenario-slide .scenario-card[data-scenario-swipe] {
+          --scenario-drag-offset: 0px;
+          touch-action: pan-y;
+          cursor: grab;
+          user-select: none;
+        }
+
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe].is-scenario-swiping {
+          cursor: grabbing;
+        }
+
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe].is-scenario-settling {
+          pointer-events: none;
+        }
+
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe]
+          .scenario-card-visual,
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe]
+          .scenario-expand-button,
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe]
+          .scenario-card-body
+          > *,
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe]
+          > .scenario-modes {
+          translate: var(--scenario-drag-offset) 0;
+          transition: translate 420ms var(--ease-out-expo);
+          will-change: translate;
+        }
+
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe]
+          .scenario-card-visual {
+          transition:
+            translate 420ms var(--ease-out-expo),
+            background-image 280ms ease,
+            filter 280ms ease;
+        }
+
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe]
+          .scenario-expand-button {
+          transition:
+            translate 420ms var(--ease-out-expo),
+            transform 260ms var(--ease-out-expo),
+            background 260ms ease,
+            border-color 260ms ease,
+            color 260ms ease;
+        }
+
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe].is-scenario-swiping
+          .scenario-card-visual,
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe].is-scenario-swiping
+          .scenario-expand-button,
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe].is-scenario-swiping
+          .scenario-card-body
+          > *,
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe].is-scenario-swiping
+          > .scenario-modes,
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe].is-scenario-drag-instant
+          .scenario-card-visual,
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe].is-scenario-drag-instant
+          .scenario-expand-button,
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe].is-scenario-drag-instant
+          .scenario-card-body
+          > *,
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe].is-scenario-drag-instant
+          > .scenario-modes {
+          transition: none;
+        }
+
+        .slide.scenario-slide.is-scenario-second-position
+          .scenario-card-yoga
+          .scenario-yoga-nav {
+          display: none;
+        }
+      }
+
+      @media (min-width: 861px) and (prefers-reduced-motion: reduce) {
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe]
+          .scenario-card-visual,
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe]
+          .scenario-expand-button,
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe]
+          .scenario-card-body
+          > *,
+        .slide.scenario-slide
+          .scenario-card[data-scenario-swipe]
+          > .scenario-modes {
+          translate: 0 0;
+          transition: none;
+        }
+      }
+
+      .scenario-yoga-nav {
+        position: relative;
+        grid-column: 1;
+        grid-row: 1;
+        z-index: 3;
+        align-self: center;
+        justify-self: stretch;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 clamp(0.58rem, 1.35svh, 0.92rem);
+        pointer-events: none;
+      }
+
+      .scenario-nav-button {
+        display: grid;
+        place-items: center;
+        width: clamp(2.2rem, 4.1svh, 2.9rem);
+        height: clamp(2.2rem, 4.1svh, 2.9rem);
+        border: 1px solid rgba(248, 251, 245, 0.28);
+        border-radius: 999px;
+        color: rgba(248, 251, 245, 0.82);
+        background: rgba(4, 8, 9, 0.54);
+        box-shadow:
+          0 0.85rem 2rem rgba(4, 8, 9, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(12px) saturate(1.12);
+        -webkit-backdrop-filter: blur(12px) saturate(1.12);
+        font-family: var(--font-body);
+        cursor: pointer;
+        pointer-events: auto;
+        transition:
+          transform 260ms var(--ease-out-expo),
+          background 260ms ease,
+          border-color 260ms ease,
+          color 260ms ease;
+      }
+
+      .scenario-nav-button:hover,
+      .scenario-nav-button:focus-visible {
+        border-color: rgba(214, 182, 106, 0.68);
+        color: #ffffff;
+        background: rgba(4, 8, 9, 0.72);
+        transform: scale(1.05);
+      }
+
+      .scenario-nav-button span {
+        display: block;
+        margin-top: -0.08em;
+        font-size: clamp(1.8rem, 3.5svh, 2.55rem);
+        font-weight: 300;
+        line-height: 1;
+      }
+
+      .scenario-card-visual::before,
+      .scenario-card-visual::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        border-radius: inherit;
+        pointer-events: none;
+      }
+
+      .scenario-card-visual::before {
+        border: 2px solid rgba(214, 182, 106, 0.86);
+      }
+
+      .scenario-card-visual::after {
+        border: 2px solid rgba(255, 236, 174, 0.82);
+        box-shadow:
+          inset 0 0 0 1px rgba(127, 84, 31, 0.5),
+          0 0 0 1px rgba(127, 84, 31, 0.28);
+      }
+
+      @supports (
+        (-webkit-mask: linear-gradient(#000, #000)) or
+          (mask: linear-gradient(#000, #000))
+      ) {
+        .scenario-card-visual::before {
+          padding: 2px;
+          border: 0;
+          background: linear-gradient(
+            115deg,
+            rgba(126, 82, 28, 0.82),
+            rgba(214, 182, 106, 0.86),
+            rgba(255, 240, 181, 0.96),
+            rgba(181, 126, 43, 0.92),
+            rgba(255, 249, 222, 0.88),
+            rgba(146, 96, 34, 0.82)
+          );
+          background-size: 260% 260%;
+          opacity: 1;
+          animation: scenario-card-visual-gold-shimmer 8s ease-in-out infinite;
+          -webkit-mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+          -webkit-mask-composite: xor;
+          mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+          mask-composite: exclude;
+        }
+      }
+
+      @keyframes scenario-card-visual-gold-shimmer {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .scenario-card-visual::before {
+          animation: none;
+          background-position: 55% 50%;
+        }
+      }
+
+      .scenario-expand-button {
+        position: relative;
+        grid-column: 1;
+        grid-row: 1;
+        align-self: end;
+        justify-self: end;
+        z-index: 3;
+        display: grid;
+        place-items: center;
+        margin: clamp(0.85rem, 1.7svh, 1.1rem);
+        width: clamp(2.35rem, 4.2svh, 3rem);
+        height: clamp(2.35rem, 4.2svh, 3rem);
+        border: 1px solid rgba(248, 251, 245, 0.24);
+        border-radius: 999px;
+        color: rgba(248, 251, 245, 0.78);
+        background: rgba(4, 8, 9, 0.58);
+        box-shadow:
+          0 0.9rem 2.1rem rgba(4, 8, 9, 0.34),
+          inset 0 1px 0 rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(12px) saturate(1.12);
+        -webkit-backdrop-filter: blur(12px) saturate(1.12);
+        font-family: var(--font-body);
+        font-size: clamp(1rem, 2svh, 1.34rem);
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+          transform 260ms var(--ease-out-expo),
+          background 260ms ease,
+          border-color 260ms ease,
+          color 260ms ease;
+      }
+
+      .scenario-expand-button:hover,
+      .scenario-expand-button:focus-visible {
+        border-color: rgba(214, 182, 106, 0.62);
+        color: #ffffff;
+        background: rgba(4, 8, 9, 0.74);
+        transform: translateY(-1px) scale(1.04);
+      }
+
+      .scenario-expand-icon {
+        width: 58%;
+        height: 58%;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2.35;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .scenario-card.event .scenario-card-visual {
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .scenario-card-body {
+        display: grid;
+        grid-column: 2;
+        grid-row: 1;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto auto auto;
+        row-gap: clamp(0.18rem, 0.52svh, 0.42rem);
+        align-self: start;
+        min-width: 0;
+      }
+
+      .scenario-card > .scenario-modes {
+        grid-column: 1 / 3;
+        grid-row: 2;
+        justify-content: flex-start;
+        align-content: flex-start;
+        align-self: start;
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 0;
+      }
+
+      .scenario-card-event > .scenario-modes {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-content: flex-start;
+      }
+
+      .slide.scenario-slide .scenario-card-yoga {
+        --scenario-yoga-nav-gutter: clamp(2.65rem, 5.2svh, 3.55rem);
+      }
+
+      .slide.scenario-slide:not(.is-scenario-second-position)
+        .scenario-card-yoga {
+        display: grid;
+        grid-template-columns:
+          var(--scenario-yoga-nav-gutter) minmax(0, 1fr)
+          var(--scenario-yoga-nav-gutter);
+        grid-template-rows: auto auto auto;
+        gap: clamp(0.9rem, 1.9svh, 1.2rem);
+        align-items: start;
+        align-content: start;
+        width: 100%;
+        transform: none;
+      }
+
+      .slide.scenario-slide:not(.is-scenario-second-position)
+        .scenario-card-yoga
+        .scenario-card-visual,
+      .slide.scenario-slide:not(.is-scenario-second-position)
+        .scenario-card-yoga
+        .scenario-expand-button {
+        grid-column: 2;
+      }
+
+      .slide.scenario-slide:not(.is-scenario-second-position)
+        .scenario-card-yoga
+        .scenario-yoga-nav {
+        grid-column: 1 / 4;
+        grid-row: 1;
+        z-index: 5;
+        padding: 0;
+      }
+
+      .slide.scenario-slide:not(.is-scenario-second-position)
+        .scenario-card-yoga
+        .scenario-card-body {
+        grid-column: 2;
+        grid-row: 3;
+        padding: 0 clamp(0.25rem, 0.7svh, 0.55rem);
+        align-self: start;
+        transform: translateY(clamp(-0.65rem, -1svh, -0.35rem));
+      }
+
+      .slide.scenario-slide:not(.is-scenario-second-position)
+        .scenario-card-yoga
+        > .scenario-modes {
+        grid-column: 2;
+        grid-row: 2;
+        justify-content: flex-end;
+      }
+
+      .slide.scenario-slide.is-scenario-second-position
+        .scenario-card-yoga {
+        grid-template-columns:
+          var(--scenario-yoga-nav-gutter)
+          minmax(13rem, var(--scenario-card-media-width))
+          var(--scenario-yoga-nav-gutter)
+          minmax(0, 1fr);
+      }
+
+      .slide.scenario-slide.is-scenario-second-position
+        .scenario-card-yoga
+        .scenario-card-visual,
+      .slide.scenario-slide.is-scenario-second-position
+        .scenario-card-yoga
+        .scenario-expand-button {
+        grid-column: 2;
+      }
+
+      .slide.scenario-slide.is-scenario-second-position
+        .scenario-card-yoga
+        .scenario-yoga-nav {
+        grid-column: 1 / 4;
+        grid-row: 1;
+        z-index: 5;
+        padding: 0;
+      }
+
+      .slide.scenario-slide.is-scenario-second-position
+        .scenario-card-yoga
+        .scenario-card-body {
+        grid-column: 4;
+      }
+
+      .slide.scenario-slide.is-scenario-second-position
+        .scenario-card-yoga
+        > .scenario-modes {
+        grid-column: 2;
+      }
+
+      @media (min-width: 861px) {
+        .slide.scenario-slide .scenario-card-yoga {
+          --scenario-yoga-nav-gutter: clamp(3.1rem, 5.8svh, 4rem);
+        }
+
+        .slide.scenario-slide.is-scenario-second-position
+          .scenario-card-yoga {
+          grid-template-columns: minmax(
+              13rem,
+              var(--scenario-card-media-width)
+            )
+            minmax(0, 1fr);
+        }
+
+        .slide.scenario-slide.is-scenario-second-position
+          .scenario-card-yoga
+          .scenario-card-visual,
+        .slide.scenario-slide.is-scenario-second-position
+          .scenario-card-yoga
+          .scenario-expand-button {
+          grid-column: 1;
+        }
+
+        .slide.scenario-slide.is-scenario-second-position
+          .scenario-card-yoga
+          .scenario-card-body {
+          grid-column: 2;
+        }
+
+        .slide.scenario-slide.is-scenario-second-position
+          .scenario-card-yoga
+          > .scenario-modes {
+          grid-column: 1;
+        }
+
+        .scenario-card > .scenario-modes {
+          grid-column: 1;
+          grid-row: 2;
+          justify-content: flex-end;
+        }
+
+        .slide.scenario-slide .scenario-nav-button {
+          width: clamp(2.6rem, 5svh, 3.45rem);
+          height: clamp(2.6rem, 5svh, 3.45rem);
+          border-color: rgba(255, 255, 255, 0.72);
+          color: #202428;
+          background: rgba(255, 252, 244, 0.62);
+          box-shadow:
+            0 0.75rem 2rem rgba(104, 81, 45, 0.16),
+            inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        .slide.scenario-slide .scenario-nav-button:hover,
+        .slide.scenario-slide .scenario-nav-button:focus-visible {
+          border-color: rgba(154, 118, 53, 0.52);
+          color: #202428;
+          background: rgba(255, 252, 244, 0.86);
+        }
+
+        .slide.scenario-slide .scenario-nav-button span {
+          margin-top: -0.1em;
+          font-size: clamp(2rem, 4svh, 2.9rem);
+        }
+      }
+
+      .scenario-card-meta {
+        grid-column: 1;
+        grid-row: 1;
+        color: #9a7635;
+        font-size: clamp(0.66rem, 1.2svh, 0.82rem);
+        font-weight: 700;
+        line-height: 1.08;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .scenario-card-body > .scenario-card-meta {
+        margin-top: 25px;
+      }
+
+      .scenario-card-title {
+        grid-column: 1;
+        grid-row: 2;
+        margin-top: clamp(0.12rem, 0.32svh, 0.26rem);
+        color: #202428;
+        font-size: clamp(1.38rem, 2.85svh, 2.15rem);
+        line-height: 0.98;
+        font-weight: 700;
+      }
+
+      .scenario-card-text {
+        grid-column: 1;
+        grid-row: 3;
+        max-width: 27ch;
+        margin-top: clamp(0.16rem, 0.44svh, 0.32rem);
+        color: rgba(32, 36, 40, 0.72);
+        font-size: clamp(0.78rem, 1.55svh, 0.96rem);
+        line-height: 1.24;
+        font-weight: 600;
+      }
+
+      @media (min-width: 861px) {
+        .scenario-card-body > .scenario-card-meta {
+          margin-top: clamp(0.42rem, 1.1svh, 0.74rem);
+        }
+      }
+
+      .scenario-punchline {
+        max-width: 52ch;
+        margin-top: clamp(0.52rem, 1.15svh, 0.78rem);
+        color: #806331;
+        font-size: clamp(0.92rem, 1.85svh, 1.16rem);
+        font-weight: 700;
+        line-height: 1.22;
+      }
+
+      .scenario-modal[hidden] {
+        display: none !important;
+      }
+
+      .scenario-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 80;
+        display: grid;
+        place-items: center;
+        padding: 4.5vh 4.5vw;
+        background: rgba(32, 24, 12, 0.22);
+        backdrop-filter: blur(3px);
+      }
+
+      .scenario-modal-card {
+        position: relative;
+        isolation: isolate;
+        display: grid;
+        grid-template-rows: auto auto;
+        width: min(93.5vw, 112svh, 112.2rem);
+        height: auto;
+        max-width: 112.2rem;
+        max-height: 93.5vh;
+        overflow: hidden;
+        border: 0;
+        border-radius: clamp(1.2rem, 3svh, 2.2rem);
+        background: rgba(255, 252, 244, 0.88);
+        box-shadow:
+          0 3.5rem 8rem rgba(72, 52, 18, 0.28),
+          inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        transform-origin: top left;
+      }
+
+      .scenario-modal-card::before,
+      .scenario-modal-card::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 4;
+        border-radius: inherit;
+        pointer-events: none;
+      }
+
+      .scenario-modal-card::before {
+        border: 2px solid rgba(214, 182, 106, 0.86);
+      }
+
+      .scenario-modal-card::after {
+        border: 2px solid rgba(255, 236, 174, 0.82);
+        box-shadow:
+          inset 0 0 0 1px rgba(127, 84, 31, 0.5),
+          0 0 0 1px rgba(127, 84, 31, 0.28);
+      }
+
+      @supports (
+        (-webkit-mask: linear-gradient(#000, #000)) or
+          (mask: linear-gradient(#000, #000))
+      ) {
+        .scenario-modal-card::before {
+          padding: 2px;
+          border: 0;
+          background: var(--scenario-gold-border);
+          background-size: 260% 260%;
+          opacity: 1;
+          animation: scenario-card-visual-gold-shimmer 8s ease-in-out infinite;
+          -webkit-mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+          -webkit-mask-composite: xor;
+          mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+          mask-composite: exclude;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .scenario-modal-card::before {
+          animation: none;
+          background-position: 55% 50%;
+        }
+      }
+
+      .scenario-modal-visual {
+        position: relative;
+        overflow: hidden;
+        min-height: 0;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background:
+          var(--scenario-modal-image) center / cover no-repeat,
+          linear-gradient(
+            135deg,
+            rgba(32, 36, 40, 0.08),
+            rgba(214, 182, 106, 0.14)
+          );
+      }
+
+      .scenario-modal-video {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .scenario-modal-footer {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: clamp(0.62rem, 1.2svh, 0.9rem);
+        align-items: start;
+        min-width: 0;
+        padding: clamp(0.82rem, 1.55svh, 1.08rem)
+          clamp(1rem, 2.1vw, 1.5rem);
+        background:
+          linear-gradient(
+            180deg,
+            rgba(255, 252, 244, 0.9),
+            rgba(246, 238, 219, 0.96)
+          );
+      }
+
+      .scenario-modal-meta {
+        color: #9a7635;
+        font-size: clamp(0.68rem, 1.25svh, 0.86rem);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .scenario-modal-title {
+        margin-top: clamp(0.32rem, 0.72svh, 0.52rem);
+        color: #202428;
+        font-size: clamp(1.5rem, 3.3svh, 2.45rem);
+        font-weight: 700;
+        line-height: 0.96;
+      }
+
+      .scenario-modal-text {
+        margin-top: clamp(0.45rem, 1svh, 0.68rem);
+        color: rgba(32, 36, 40, 0.72);
+        font-size: clamp(0.78rem, 1.35svh, 0.96rem);
+        font-weight: 600;
+        line-height: 1.24;
+      }
+
+      .scenario-modal-modes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(0.32rem, 0.72svh, 0.48rem);
+        justify-content: flex-start;
+        min-width: 0;
+      }
+
+      .scenario-modal-close {
+        position: absolute;
+        top: clamp(0.85rem, 1.8svh, 1.2rem);
+        right: clamp(0.85rem, 1.8svh, 1.2rem);
+        z-index: 5;
+        display: grid;
+        place-items: center;
+        width: clamp(2.45rem, 4.8svh, 3.35rem);
+        height: clamp(2.45rem, 4.8svh, 3.35rem);
+        border: 1px solid rgba(248, 251, 245, 0.24);
+        border-radius: 999px;
+        color: rgba(248, 251, 245, 0.78);
+        background: rgba(4, 8, 9, 0.58);
+        box-shadow:
+          0 1rem 2.4rem rgba(4, 8, 9, 0.36),
+          inset 0 1px 0 rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(12px) saturate(1.12);
+        -webkit-backdrop-filter: blur(12px) saturate(1.12);
+        font-size: clamp(1.25rem, 2.7svh, 1.8rem);
+        font-weight: 700;
+        line-height: 1;
+        cursor: pointer;
+        transition:
+          transform 240ms var(--ease-out-expo),
+          background 240ms ease,
+          border-color 240ms ease,
+          color 240ms ease;
+      }
+
+      .scenario-modal-close:hover,
+      .scenario-modal-close:focus-visible {
+        border-color: rgba(214, 182, 106, 0.62);
+        color: #ffffff;
+        background: rgba(4, 8, 9, 0.74);
+        transform: rotate(90deg) scale(1.04);
+      }
+
+      @media (min-width: 861px) {
+        .scenario-modal-card {
+          width: min(96vw, 124svh, 124rem);
+          max-height: 95vh;
+        }
+      }

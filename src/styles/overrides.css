@@ -1,0 +1,213 @@
+      /* ===========================================
+         PRESENTATION OVERRIDES
+         =========================================== */
+      .slide:not(#slide-1) :is(h1, h2, h3, h4, h5, h6) {
+        font-weight: 400;
+      }
+
+      .hub-line.is-hub-line-sequenced {
+        display: block;
+      }
+
+      .hub-line.is-hub-line-sequenced .hub-line-segment,
+      .hub-line.is-hub-line-sequenced .hub-line-tail {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(0.42rem);
+        filter: blur(0.18rem);
+        transition:
+          opacity 440ms var(--ease-out-expo),
+          transform 440ms var(--ease-out-expo),
+          filter 440ms ease;
+      }
+
+      .slide.hub-slide.visible
+        .hub-line.is-hub-line-sequenced
+        .hub-line-segment.is-hub-line-segment-visible {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      .slide.hub-slide.visible
+        .hub-line.is-hub-line-sequenced
+        .hub-line-tail.is-hub-line-follow-visible {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      @media (min-width: 861px) {
+        .hub-slide {
+          --hub-line-reveal-delay: 3.62s;
+          --hub-slider-reveal-delay: 4.42s;
+          --hub-controls-reveal-delay: 5.16s;
+        }
+
+        .hub-slide .hub-slider.reveal {
+          opacity: 0;
+          clip-path: inset(0 0 0 99.4%);
+          will-change: clip-path, opacity;
+        }
+
+        .slide.hub-slide.visible .hub-slider.reveal {
+          opacity: 0;
+          animation: hub-slider-expand-from-line 860ms
+            var(--hub-slider-reveal-delay) cubic-bezier(0.16, 1, 0.3, 1)
+            forwards;
+        }
+
+        .hub-slide .hub-content > .hub-line.reveal,
+        .hub-slide .hub-content > .hub-punchline.reveal {
+          opacity: 0;
+          transform: translateY(clamp(1.2rem, 2.8svh, 2.4rem));
+          transition: none;
+          will-change: opacity, transform, filter;
+        }
+
+        .slide.hub-slide.visible .hub-content > .hub-line.reveal {
+          animation: hub-copy-rise 560ms var(--hub-line-reveal-delay)
+            var(--ease-out-expo) both;
+        }
+
+        .slide.hub-slide.visible .hub-content > .hub-punchline.reveal {
+          animation: none;
+          opacity: 0;
+          transform: translateY(clamp(1.2rem, 2.8svh, 2.4rem));
+          filter: blur(0.12rem);
+          transition:
+            opacity 520ms var(--ease-out-expo),
+            transform 520ms var(--ease-out-expo),
+            filter 520ms ease;
+          transition-delay: 0ms;
+        }
+
+        .hub-line.is-hub-line-sequenced {
+          overflow: visible;
+        }
+
+        .hub-line.is-hub-line-sequenced .hub-line-segment {
+          transform: translateY(-0.55rem) scale(4.4);
+          transform-origin: left bottom;
+          filter: blur(0.24rem);
+          transition:
+            opacity 380ms cubic-bezier(0.16, 1, 0.3, 1),
+            transform 380ms cubic-bezier(0.16, 1, 0.3, 1),
+            filter 380ms ease;
+          will-change: opacity, transform, filter;
+        }
+
+        .slide.hub-slide.visible
+          .hub-line.is-hub-line-sequenced
+          .hub-line-segment.is-hub-line-segment-visible {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+          filter: blur(0);
+        }
+
+        .slide.hub-slide.visible
+          .hub-line.is-hub-line-sequenced
+          .hub-line-tail.is-hub-line-follow-visible {
+          opacity: 1;
+          transform: translateY(0);
+          filter: blur(0);
+          transition-delay: 420ms;
+        }
+
+        .slide.hub-slide.visible.is-hub-line-complete
+          .hub-content
+          > .hub-punchline.reveal {
+          opacity: 1;
+          transform: translateY(0);
+          filter: blur(0);
+          transition-delay: 880ms;
+        }
+
+      }
+
+      @keyframes hub-line-segment-land {
+        0% {
+          opacity: 0;
+          transform: translateY(-0.55rem) scale(4.4);
+          filter: blur(0.24rem);
+        }
+
+        48% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+          filter: blur(0);
+        }
+      }
+
+      @keyframes hub-line-tail-rise {
+        0% {
+          opacity: 0;
+          transform: translateY(0.42rem);
+          filter: blur(0.18rem);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+          filter: blur(0);
+        }
+      }
+
+      @keyframes hub-slider-expand-from-line {
+        0% {
+          opacity: 0;
+          clip-path: inset(0 0 0 99.4%);
+        }
+
+        12% {
+          opacity: 1;
+          clip-path: inset(0 0 0 99.4%);
+        }
+
+        96% {
+          opacity: 1;
+          clip-path: inset(0 0 0 0);
+        }
+
+        100% {
+          opacity: 1;
+          clip-path: none;
+        }
+      }
+
+      @keyframes hub-copy-rise {
+        0% {
+          opacity: 0;
+          transform: translateY(clamp(1.2rem, 2.8svh, 2.4rem));
+          filter: blur(0.12rem);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+          filter: blur(0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .slide.hub-slide.visible .hub-slider.reveal {
+          opacity: 1;
+          clip-path: none;
+          animation: none;
+        }
+
+        .hub-line.is-hub-line-sequenced .hub-line-segment,
+        .hub-line.is-hub-line-sequenced .hub-line-tail,
+        .slide.hub-slide.visible .hub-content > .hub-line.reveal,
+        .slide.hub-slide.visible .hub-content > .hub-punchline.reveal {
+          animation: none;
+          opacity: 1;
+          transform: none;
+          filter: none;
+          transition: none;
+        }
+      }

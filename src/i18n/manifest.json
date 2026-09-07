@@ -1,0 +1,35 @@
+{
+  "defaultLanguage": "en",
+  "sourceLanguage": "ru",
+  "storageKey": "jitmaxDeckLanguage",
+  "languages": [
+    {
+      "code": "en",
+      "label": "EN",
+      "nativeName": "English",
+      "flag": "assets/flags/en.svg",
+      "file": "en.json"
+    },
+    {
+      "code": "ru",
+      "label": "RU",
+      "nativeName": "Русский",
+      "flag": "assets/flags/ru.svg",
+      "file": "ru.json"
+    },
+    {
+      "code": "zh",
+      "label": "ZH",
+      "nativeName": "中文",
+      "flag": "assets/flags/zh.svg",
+      "file": "zh.json"
+    },
+    {
+      "code": "th",
+      "label": "TH",
+      "nativeName": "ไทย",
+      "flag": "assets/flags/th.svg",
+      "file": "th.json"
+    }
+  ]
+}

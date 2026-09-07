@@ -1,0 +1,681 @@
+      /* ===========================================
+         SLIDE 06: WHY NOW
+         =========================================== */
+      .timing-slide {
+        isolation: isolate;
+        background: #02070b;
+        color: var(--text-primary);
+      }
+
+      .timing-bg,
+      .timing-bg::before,
+      .timing-bg::after {
+        position: absolute;
+        inset: 0;
+      }
+
+      .timing-bg {
+        z-index: -4;
+        background-image: url('assets/slide-06-background.png');
+        background-position: 56% center;
+        background-size: cover;
+        transform: scale(1);
+        animation:
+          timingWake 2.5s var(--ease-out-expo) forwards,
+          timingDrift 44s ease-in-out 2.4s infinite alternate;
+      }
+
+      .timing-bg::before {
+        content: '';
+        background:
+          linear-gradient(
+            90deg,
+            rgba(1, 5, 8, 0.94) 0%,
+            rgba(1, 5, 8, 0.82) 24%,
+            rgba(1, 5, 8, 0.42) 48%,
+            rgba(1, 5, 8, 0.1) 76%
+          ),
+          linear-gradient(0deg, rgba(1, 5, 8, 0.68) 0%, transparent 48%);
+      }
+
+      .timing-bg::after {
+        content: none;
+      }
+
+      .timing-content {
+        position: relative;
+        z-index: 4;
+        width: min(39rem, 38vw);
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: clamp(2.6rem, 7svh, 5.4rem);
+      }
+
+      .timing-title {
+        max-width: 10ch;
+        color: #f7faf3;
+        font-family: var(--font-body);
+        font-size: clamp(3rem, 7.2svh, 5.55rem);
+        font-weight: 550;
+        line-height: 0.96;
+        letter-spacing: 0;
+        text-wrap: balance;
+      }
+
+      .timing-line {
+        max-width: 30ch;
+        margin-top: clamp(1rem, 2.35svh, 1.55rem);
+        color: rgba(247, 250, 243, 0.84);
+        font-size: clamp(1rem, 2.25svh, 1.45rem);
+        font-weight: 600;
+        line-height: 1.24;
+      }
+
+      .timing-places {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(0.42rem, 1svh, 0.68rem);
+        max-width: 30rem;
+        margin-top: clamp(1.1rem, 2.45svh, 1.65rem);
+      }
+
+      .place-chip {
+        border: 1px solid rgba(57, 216, 255, 0.34);
+        border-radius: 999px;
+        padding: clamp(0.34rem, 0.78svh, 0.48rem)
+          clamp(0.72rem, 1.5svh, 0.98rem);
+        color: rgba(247, 250, 243, 0.92);
+        background: rgba(4, 13, 18, 0.58);
+        box-shadow:
+          0 12px 30px rgba(0, 0, 0, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        font-size: clamp(0.72rem, 1.28svh, 0.9rem);
+        font-weight: 600;
+        opacity: 0;
+        transform: translateY(0.34rem);
+        transition:
+          opacity 520ms var(--ease-out-expo),
+          transform 520ms var(--ease-out-expo);
+        white-space: nowrap;
+      }
+
+      .place-chip.is-active {
+        border-color: rgba(69, 255, 164, 0.54);
+        color: #dfffea;
+        background: rgba(7, 42, 29, 0.62);
+      }
+
+      .slide.timing-slide.visible .timing-content > .kicker.reveal {
+        transition-delay: 0.28s;
+      }
+
+      .slide.timing-slide.visible .timing-title.reveal {
+        transition-delay: 0.48s;
+      }
+
+      .slide.timing-slide.visible .timing-line.reveal {
+        transition-delay: 1.24s;
+      }
+
+      .slide.timing-slide.visible .timing-places.reveal {
+        opacity: 1;
+        transform: none;
+        transition-delay: 0s;
+      }
+
+      .slide.timing-slide.visible .timing-places .place-chip {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .slide.timing-slide.visible .timing-places .place-chip:nth-child(1) {
+        transition-delay: 1.42s;
+      }
+
+      .slide.timing-slide.visible .timing-places .place-chip:nth-child(2) {
+        transition-delay: 2.18s;
+      }
+
+      .slide.timing-slide.visible .timing-places .place-chip:nth-child(3) {
+        transition-delay: 2.94s;
+      }
+
+      .slide.timing-slide.visible .timing-places .place-chip:nth-child(4) {
+        transition-delay: 3.7s;
+      }
+
+      .slide.timing-slide.visible .timing-places .place-chip:nth-child(5) {
+        transition-delay: 5.22s;
+      }
+
+      .slide.timing-slide.visible .timing-places .place-chip:nth-child(6) {
+        transition-delay: 5.98s;
+      }
+
+      .timing-map-layer {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .timing-card {
+        --timing-card-radius: clamp(0.7rem, 1.5svh, 1.05rem);
+        position: absolute;
+        display: grid;
+        grid-template-columns: minmax(5rem, 38%) minmax(0, 1fr);
+        align-items: center;
+        gap: clamp(0.54rem, 1svh, 0.78rem);
+        width: clamp(14.8rem, 15.4vw, 18rem);
+        min-height: clamp(5.35rem, 9.8svh, 6.85rem);
+        padding: clamp(0.5rem, 0.92svh, 0.68rem);
+        border: 1px solid transparent;
+        border-radius: var(--timing-card-radius);
+        background:
+          linear-gradient(
+            135deg,
+            rgba(2, 9, 13, 0.86),
+            rgba(1, 5, 9, 0.78) 58%,
+            rgba(6, 13, 15, 0.68)
+          ) padding-box,
+          linear-gradient(
+            115deg,
+            rgba(126, 82, 28, 0.88),
+            rgba(214, 182, 106, 0.96),
+            rgba(255, 240, 181, 0.98),
+            rgba(181, 126, 43, 0.94),
+            rgba(255, 249, 222, 0.88),
+            rgba(146, 96, 34, 0.84)
+          ) border-box;
+        box-shadow:
+          0 1.1rem 2.6rem rgba(0, 0, 0, 0.46),
+          0 0 1.4rem rgba(214, 182, 106, 0.16),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1),
+          inset 0 -1px 0 rgba(214, 182, 106, 0.08);
+        backdrop-filter: blur(18px) saturate(1.18);
+        -webkit-backdrop-filter: blur(18px) saturate(1.18);
+        overflow: visible;
+      }
+
+      .timing-card-copy::before {
+        content: '';
+        position: absolute;
+        inset: 2px;
+        border: 1px solid rgba(255, 240, 181, 0.34);
+        border-radius: calc(var(--timing-card-radius) - 0.15rem);
+        opacity: 0.68;
+        pointer-events: none;
+      }
+
+      @supports (
+        (-webkit-mask: linear-gradient(#000, #000)) or
+          (mask: linear-gradient(#000, #000))
+      ) {
+        .timing-card-copy::before {
+          padding: 1px;
+          border: 0;
+          background: linear-gradient(
+            115deg,
+            rgba(255, 240, 181, 0.58),
+            rgba(154, 118, 53, 0.38),
+            rgba(255, 249, 222, 0.34),
+            rgba(126, 82, 28, 0.46)
+          );
+          -webkit-mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+          -webkit-mask-composite: xor;
+          mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+          mask-composite: exclude;
+        }
+      }
+
+      .timing-card::after {
+        content: none;
+        display: none;
+      }
+
+      .timing-card::before {
+        content: none;
+        display: none;
+      }
+
+      .timing-card-london {
+        left: 34.5vw;
+        top: 12.4svh;
+        --line-x: 72%;
+        --line-length: 8.4svh;
+        --line-angle: -24deg;
+        --timing-card-delay: 1.42s;
+      }
+
+      .timing-card-dubai {
+        left: 61.2vw;
+        top: 9.2svh;
+        --line-x: 50%;
+        --line-length: 10.2svh;
+        --line-angle: 14deg;
+        --timing-card-delay: 2.18s;
+      }
+
+      .timing-card-tokyo {
+        right: 2.8vw;
+        top: 26svh;
+        --line-x: 67%;
+        --line-length: 6.9svh;
+        --line-angle: 2deg;
+        --timing-card-delay: 2.94s;
+      }
+
+      .timing-card-sphere {
+        left: 35.6vw;
+        top: 43.5svh;
+        --line-x: 18%;
+        --line-length: 5.4svh;
+        --line-angle: -12deg;
+        --timing-card-delay: 3.7s;
+      }
+
+      .timing-card-area15 {
+        left: 39.6vw;
+        top: 61.5svh;
+        bottom: auto;
+        --line-x: 56%;
+        --line-length: 5.6svh;
+        --line-angle: 14deg;
+        --timing-card-delay: 4.46s;
+      }
+
+      .timing-card-miami {
+        left: 25.6vw;
+        bottom: 4.6svh;
+        --line-x: 22%;
+        --line-length: 6.4svh;
+        --line-angle: -10deg;
+        --timing-card-delay: 5.22s;
+      }
+
+      .slide.timing-slide.visible .timing-card.reveal {
+        transition-delay: var(--timing-card-delay);
+        animation: timingCardPulseIn 0.94s var(--ease-out-expo) both;
+        animation-delay: var(--timing-card-delay);
+      }
+
+      @keyframes timingCardPulseIn {
+        0% {
+          opacity: 0;
+          transform: translateY(0.66rem) scale(0.9);
+        }
+
+        25% {
+          opacity: 1;
+          transform: translateY(0) scale(1.045);
+        }
+
+        44% {
+          opacity: 1;
+          transform: translateY(0) scale(0.985);
+        }
+
+        63% {
+          opacity: 1;
+          transform: translateY(0) scale(1.02);
+        }
+
+        80% {
+          opacity: 1;
+          transform: translateY(0) scale(0.995);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .slide.timing-slide.visible .timing-card.reveal,
+        .slide.timing-slide.visible .phuket-marker.reveal {
+          animation: none;
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      .timing-card-area15::after,
+      .timing-card-miami::after {
+        top: auto;
+        bottom: 100%;
+        background: linear-gradient(
+          0deg,
+          rgba(214, 182, 106, 0.78),
+          rgba(214, 182, 106, 0.08)
+        );
+        transform-origin: bottom;
+      }
+
+      .timing-card-area15::before,
+      .timing-card-miami::before {
+        top: auto;
+        bottom: calc(100% + var(--line-length, 6svh));
+      }
+
+      .timing-card-media {
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        height: clamp(4.25rem, 7.8svh, 5.35rem);
+        margin: 0;
+        border: 1px solid rgba(214, 182, 106, 0.18);
+        border-radius: clamp(0.42rem, 0.9svh, 0.66rem);
+        background: rgba(2, 9, 13, 0.58);
+        box-shadow:
+          0 0.82rem 1.55rem rgba(0, 0, 0, 0.2),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+      }
+
+      .timing-card-media::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 34%),
+          radial-gradient(circle at 18% 12%, rgba(214, 182, 106, 0.16), transparent 36%);
+        mix-blend-mode: screen;
+        pointer-events: none;
+      }
+
+      .timing-card-thumb {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .timing-card-copy {
+        display: grid;
+        align-content: center;
+        min-width: 0;
+        color: rgba(247, 250, 243, 0.94);
+      }
+
+      .timing-card-copy h3 {
+        max-width: 12ch;
+        color: #f7faf3;
+        font-size: clamp(0.84rem, 1.42svh, 1.08rem);
+        font-weight: 700;
+        line-height: 1.08;
+        letter-spacing: 0;
+        text-shadow: 0 0.7rem 1.6rem rgba(0, 0, 0, 0.42);
+      }
+
+      .timing-card-location {
+        margin-top: clamp(0.38rem, 0.76svh, 0.54rem);
+        padding-top: clamp(0.34rem, 0.62svh, 0.46rem);
+        border-top: 1px solid rgba(214, 182, 106, 0.28);
+        color: rgba(214, 182, 106, 0.9);
+        font-size: clamp(0.6rem, 1.02svh, 0.74rem);
+        font-weight: 700;
+        line-height: 1.18;
+      }
+
+      .timing-card-visitors {
+        display: none;
+        margin: 0;
+      }
+
+      @media (min-width: 861px) {
+        .timing-card {
+          grid-template-columns: minmax(4.9rem, 34%) minmax(0, 1fr);
+          width: clamp(16.4rem, 17.1vw, 19.6rem);
+          min-height: clamp(6rem, 11.1svh, 7.65rem);
+        }
+
+        .timing-card-visitors {
+          display: block;
+          position: absolute;
+          top: calc(100% + clamp(0.22rem, 0.54svh, 0.42rem));
+          right: clamp(0.08rem, 0.28vw, 0.3rem);
+          max-width: min(17.5rem, 112%);
+          color: rgba(223, 255, 234, 0.92);
+          font-size: clamp(0.78rem, 1.32svh, 1rem);
+          font-weight: 850;
+          line-height: 1.06;
+          text-align: right;
+          text-shadow:
+            0 0.55rem 1.1rem rgba(0, 0, 0, 0.82),
+            0 0 0.72rem rgba(0, 0, 0, 0.66);
+          white-space: nowrap;
+        }
+
+        .timing-card-visitors-value {
+          font-size: clamp(1.03rem, 1.78svh, 1.34rem);
+          font-weight: 900;
+          line-height: 1;
+        }
+      }
+
+      .phuket-marker {
+        --phuket-marker-radius: clamp(0.74rem, 1.42svh, 1rem);
+        position: absolute;
+        left: auto;
+        right: clamp(6.25rem, 8.8vw, 12.8rem);
+        top: 63.2svh;
+        display: grid;
+        grid-template-columns: minmax(9.6rem, 1fr) 1px minmax(8rem, auto);
+        grid-template-areas:
+          'metrics divider copy'
+          'metrics divider copy';
+        align-items: center;
+        column-gap: clamp(0.78rem, 1.1vw, 1.05rem);
+        row-gap: 0.08rem;
+        box-sizing: border-box;
+        width: clamp(23rem, 29.4vw, 31.5rem);
+        min-height: clamp(5.25rem, 9svh, 6.4rem);
+        padding: clamp(0.68rem, 1.2svh, 0.88rem)
+          clamp(0.78rem, 1.45vw, 1.12rem);
+        border: 1px solid transparent;
+        border-radius: var(--phuket-marker-radius);
+        color: #f7faf3;
+        background:
+          linear-gradient(
+            135deg,
+            rgba(2, 9, 13, 0.88),
+            rgba(1, 5, 9, 0.76) 56%,
+            rgba(7, 18, 19, 0.68)
+          ) padding-box,
+          linear-gradient(
+            115deg,
+            rgba(126, 82, 28, 0.82),
+            rgba(214, 182, 106, 0.96),
+            rgba(255, 240, 181, 0.86),
+            rgba(146, 96, 34, 0.8)
+          ) border-box;
+        box-shadow:
+          0 1.15rem 2.5rem rgba(0, 0, 0, 0.44),
+          0 0 1.35rem rgba(214, 182, 106, 0.16),
+          inset 0 1px 0 rgba(255, 255, 255, 0.12),
+          inset 0 -1px 0 rgba(214, 182, 106, 0.08);
+        text-shadow: 0 1rem 2.2rem rgba(0, 0, 0, 0.54);
+        backdrop-filter: blur(18px) saturate(1.16);
+        -webkit-backdrop-filter: blur(18px) saturate(1.16);
+        isolation: isolate;
+        overflow: hidden;
+      }
+
+      .slide.timing-slide.visible .phuket-marker.reveal {
+        transition-delay: 5.98s;
+        animation: timingCardPulseIn 0.94s var(--ease-out-expo) both;
+        animation-delay: 5.98s;
+      }
+
+      .phuket-marker::before {
+        content: '';
+        grid-area: divider;
+        position: relative;
+        z-index: 1;
+        align-self: stretch;
+        width: 1px;
+        min-height: clamp(3.15rem, 6.1svh, 4.45rem);
+        background: linear-gradient(
+          180deg,
+          rgba(214, 182, 106, 0.08),
+          rgba(255, 240, 181, 0.9) 18%,
+          rgba(214, 182, 106, 0.96) 50%,
+          rgba(255, 240, 181, 0.86) 82%,
+          rgba(214, 182, 106, 0.06)
+        );
+        box-shadow:
+          0 0 0.45rem rgba(214, 182, 106, 0.5),
+          0 0 1.15rem rgba(214, 182, 106, 0.28);
+      }
+
+      .phuket-marker::after {
+        content: '';
+        position: absolute;
+        inset: 1px;
+        z-index: 0;
+        border-radius: calc(var(--phuket-marker-radius) - 0.08rem);
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 34%),
+          radial-gradient(circle at 14% 18%, rgba(214, 182, 106, 0.15), transparent 42%);
+        opacity: 0.72;
+        mix-blend-mode: screen;
+        pointer-events: none;
+      }
+
+      .phuket-marker-copy {
+        grid-area: copy;
+        position: relative;
+        z-index: 1;
+        display: grid;
+        justify-items: center;
+        align-self: center;
+        gap: clamp(0.08rem, 0.18svh, 0.14rem);
+        text-align: center;
+      }
+
+      @media (min-width: 861px) {
+        .phuket-marker-copy {
+          justify-items: start;
+          text-align: left;
+        }
+      }
+
+      .phuket-marker-title {
+        position: relative;
+        z-index: 1;
+        font-size: clamp(1.15rem, 2.8svh, 1.72rem);
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .phuket-marker-text {
+        position: relative;
+        z-index: 1;
+        color: #d6b66a;
+        font-size: clamp(0.78rem, 1.55svh, 1rem);
+        font-weight: 700;
+        line-height: 1.08;
+      }
+
+      .phuket-metrics {
+        grid-area: metrics;
+        position: relative;
+        z-index: 1;
+        display: grid;
+        justify-items: end;
+        gap: clamp(0.32rem, 0.75svh, 0.5rem);
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: right;
+        text-shadow:
+          0 0.55rem 1.25rem rgba(0, 0, 0, 0.82),
+          0 0 0.85rem rgba(0, 0, 0, 0.66);
+      }
+
+      .phuket-metric {
+        display: grid;
+        justify-items: end;
+        gap: 0.18rem;
+      }
+
+      .phuket-metric dt,
+      .phuket-metric dd {
+        margin: 0;
+      }
+
+      .phuket-metric-value {
+        display: inline-block;
+        min-width: 8ch;
+        color: #f7faf3;
+        font-size: clamp(1rem, 2.1svh, 1.34rem);
+        font-weight: 800;
+        line-height: 1;
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .phuket-metric dd {
+        color: rgba(223, 255, 234, 0.86);
+        font-size: clamp(0.66rem, 1.22svh, 0.86rem);
+        font-weight: 700;
+        line-height: 1.1;
+      }
+
+      @media (max-width: 1180px) {
+        .phuket-marker {
+          top: 78svh;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .phuket-marker {
+          left: auto;
+          right: clamp(1rem, 2.2vw, 1.45rem);
+          top: 80svh;
+          grid-template-columns: minmax(8.3rem, 1fr) 1px minmax(7.2rem, auto);
+          grid-template-areas:
+            'metrics divider title'
+            'metrics divider text';
+          column-gap: clamp(0.62rem, 1.55vw, 0.86rem);
+          width: clamp(20rem, 43vw, 24rem);
+        }
+
+        .phuket-marker-copy {
+          display: contents;
+        }
+
+        .phuket-marker-title {
+          grid-area: title;
+        }
+
+        .phuket-marker-text {
+          grid-area: text;
+        }
+
+        .phuket-metric-value {
+          min-width: 7.6ch;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .phuket-marker {
+          right: clamp(0.7rem, 3.4vw, 1.05rem);
+          top: 76svh;
+          grid-template-columns: minmax(5.8rem, 1fr) 1px minmax(5.35rem, auto);
+          column-gap: 0.46rem;
+          width: min(78vw, 22rem);
+          min-height: auto;
+          padding: 0.58rem 0.62rem;
+        }
+
+        .phuket-metric {
+          gap: 0.14rem;
+        }
+      }
